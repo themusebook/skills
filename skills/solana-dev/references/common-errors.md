@@ -5,6 +5,21 @@ description: Diagnose and fix common errors encountered when building on Solana,
 
 # Common Solana Development Errors & Solutions
 
+## Contents
+
+- [GLIBC Errors](#glibc-errors)
+- [Rust / Cargo Errors](#rust--cargo-errors)
+- [Build Errors](#build-errors)
+- [Installation Errors](#installation-errors)
+- [Testing Errors](#testing-errors)
+- [Anchor Version Migration Issues](#anchor-version-migration-issues)
+- [Miscellaneous Errors](#miscellaneous-errors)
+- [Transaction v1 Errors](#transaction-v1-errors)
+- [LiteSVM Errors](#litesvm-errors)
+- [Platform Tools Errors](#platform-tools-errors)
+- [edition2024 Crate Incompatibility (Cargo 1.84.0)](#edition2024-crate-incompatibility-cargo-1840)
+- [Verified Test Results (Debian 12, Jan 2026)](#verified-test-results-debian-12-jan-2026)
+
 ## GLIBC Errors
 
 ### `GLIBC_2.39 not found` / `GLIBC_2.38 not found`
@@ -18,11 +33,14 @@ anchor: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.39' not found (require
 1. **Upgrade OS** (best): Ubuntu 24.04+ has GLIBC 2.39
 2. **Build from source:**
    ```bash
+   # For Anchor 1.2.x (current):
+   cargo install --git https://github.com/otter-sec/anchor --tag v1.2.1 anchor-cli
+
    # For Anchor 0.31.x:
-   cargo install --git https://github.com/solana-foundation/anchor --tag v0.31.1 anchor-cli
-   
+   cargo install --git https://github.com/otter-sec/anchor --tag v0.31.2 anchor-cli
+
    # For Anchor 0.32.x:
-   cargo install --git https://github.com/solana-foundation/anchor --tag v0.32.1 anchor-cli
+   cargo install --git https://github.com/otter-sec/anchor --tag v0.32.2 anchor-cli
    ```
 3. **Use Docker:**
    ```bash
@@ -163,7 +181,7 @@ error[E0599]: no method named `local_file` found for struct `proc_macro2::Span`
 **Cause:** proc-macro2 API change in newer nightly Rust.
 
 **Solutions:**
-1. Upgrade to Anchor 0.31.1+ (fixed in [#3663](https://github.com/solana-foundation/anchor/pull/3663))
+1. Upgrade to Anchor 0.31.1+ (fixed in [#3663](https://github.com/otter-sec/anchor/pull/3663))
 2. Use stable Rust: `RUSTUP_TOOLCHAIN=stable anchor build`
 3. Pin proc-macro2: `cargo update -p proc-macro2 --precise 1.0.86`
 
@@ -243,7 +261,7 @@ Error: failed to start validator
    ```
 4. **Consider Surfpool** as a modern alternative to `solana-test-validator`:
    ```bash
-   curl --proto '=https' --tlsv1.2 -LsSf https://github.com/txtx/surfpool/releases/latest/download/surfpool-installer.sh | sh
+   curl -sL https://run.surfpool.run/ | bash
    ```
 
 ### Anchor test fails with `Connection refused` / IPv6 issue
@@ -394,6 +412,61 @@ workspace/
 
 ---
 
+## Transaction v1 Errors
+
+Full reference: [transactions-v1.md](./transactions-v1.md).
+
+### `MaxLoadedAccountsDataSizeExceeded` on a v1 transaction
+
+```
+Transaction failed: MaxLoadedAccountsDataSizeExceeded
+```
+
+**Cause:** Unset fields in a v1 `TransactionConfig` budget **zero**, not a runtime default. A v1 transaction with an empty config fails at account loading. Only `heapSize` falls back (32 KiB).
+
+**Fix:** Set `computeUnitLimit` and `loadedAccountsDataSizeLimit` explicitly, or measure them by simulation:
+
+```ts
+const estimateResourceLimits = estimateResourceLimitsFactory({ rpc });
+const message = await estimateAndSetResourceLimitsFactory(estimateResourceLimits)(
+  fillTransactionMessageProvisoryResourceLimits(draft),
+);
+```
+
+The estimate is the exact cost of one simulated run with no margin. Add headroom and round the data size up to the next 32 KiB page — an account created between simulation and send jumps from 0 to at least 64 bytes.
+
+### JSON-RPC error `-32015` / "Transaction version (1) is not supported"
+
+**Cause:** `maxSupportedTransactionVersion` is absent or set to `0` on `getTransaction`, `getBlock`, or `blockSubscribe`. The parameter is a ceiling, not a hint.
+
+**Fix:** Pass the JSON **integer** `1`. On `getBlock` this matters twice over — a single v1 transaction fails the *entire block*, with no partial result. `blockSubscribe` emits `block: null` and stops advancing.
+
+### `Version 1 transactions are not yet supported by rpcTransactionPlanner`
+
+**Cause:** `@solana/kit-plugin-rpc` ≤0.18. Those releases typed the `version: 1` planner config but threw at runtime; 0.19.0 plans v1 natively.
+
+**Fix:** `pnpm add @solana/kit@^8.3.0 @solana/kit-plugin-rpc@^0.19.0 @solana/kit-plugin-signer@^0.19.0`, then `solanaRpc({ rpcUrl, transactionConfig: { version: 1 } })`.
+
+### Wallet rejects the transaction after upgrading to v1
+
+**Cause:** The connected wallet has not shipped v1 support, so it refuses to sign a message with version byte `0x81`.
+
+**Fix:** Check `connected.supportedTransactionVersions.has(1)` (from `client.wallet.getState()` or `useConnectedWallet`) before sending, and route those users through a `version: 0` client. See [transactions-v1.md](./transactions-v1.md#wallets).
+
+### `createTransactionMessage({ version: 1 })` is a type error
+
+**Cause:** `@solana/kit` 7.x carries the v1 codecs, config setters, and `maxSupportedTransactionVersion: 1`, but 8.0.0 is the first release whose types accept the v1 builder.
+
+**Fix:** `pnpm add @solana/kit@^8.0.0`.
+
+### Priority fee or compute unit limit reads as 0 in an indexer
+
+**Cause:** Deriving the budget by scanning instructions for the ComputeBudget program. On v1 those values live in the message config, so the scan finds nothing and reports zero **without erroring**. Over gRPC there is no version gate at all, so nothing signals the problem.
+
+**Fix:** Read `transactionConfig` (JSON-RPC) or `Message.config` (gRPC). Discriminate on `config` presence, never on the `versioned` boolean — it is `true` for both v0 and v1. Bump `yellowstone-grpc-proto` to 12.6.0+, the geyser plugin to 15.1.1+, or `@triton-one/yellowstone-grpc` to 6.0.0+; older stubs drop field 7 silently.
+
+---
+
 ## LiteSVM Errors
 
 ### `undefined symbol: __isoc23_strtol` (litesvm native binary)
@@ -402,23 +475,20 @@ Error: Cannot find native binding.
 cause: litesvm.linux-x64-gnu.node: undefined symbol: __isoc23_strtol
 ```
 
-**Root cause:** LiteSVM 0.5.0 native binary is compiled against GLIBC 2.38+. The `__isoc23_strtol` symbol was introduced in GLIBC 2.38 (C23 standard functions). Systems with GLIBC < 2.38 (Ubuntu 22.04, Debian 12, etc.) cannot load this binary.
+**Root cause:** the old LiteSVM 0.5.0 npm binary was compiled against GLIBC 2.38+. The `__isoc23_strtol` symbol was introduced in GLIBC 2.38 (C23 standard functions), so systems with GLIBC < 2.38 (Ubuntu 22.04, Debian 12, etc.) could not load it.
 
-**Verified on:** Debian 12 (GLIBC 2.36) — Jan 2026
+**Verified on:** Debian 12 (GLIBC 2.36) with `litesvm` 0.5.0 — Jan 2026
 
 **Solutions:**
-1. **Upgrade OS** to Ubuntu 24.04+ or Debian 13+ (recommended)
+1. **Upgrade `litesvm`** to the current 1.x (1.6.0 as of Oct 2026). Its gnu binaries are cross-built on Ubuntu 22.04 runners, and musl builds (`litesvm-linux-{x64,arm64}-musl`) ship alongside them. Delete `node_modules` and the lockfile entry so the right optional binary is installed.
 2. **Use Docker:**
    ```dockerfile
    FROM ubuntu:24.04
    RUN apt-get update && apt-get install -y nodejs npm
    ```
-3. **Fall back to `solana-bankrun`** if you can't upgrade:
-   ```bash
-   pnpm remove litesvm anchor-litesvm
-   pnpm add -D solana-bankrun anchor-bankrun
-   ```
-4. **Try litesvm 0.3.x** which may work on older GLIBC versions
+3. **Upgrade the OS** to Ubuntu 24.04+ or Debian 13+.
+
+Do not switch to `solana-bankrun`: it is deprecated in favor of LiteSVM.
 
 ### `Cannot find module './litesvm.linux-x64-gnu.node'`
 ```
@@ -610,7 +680,7 @@ Environment: Rust 1.93, Solana CLI 2.2.16, Anchor CLI 0.30.1, Node 22.22.0, GLIB
 | litesvm npm (GLIBC 2.36) | `npm install litesvm && require('litesvm')` | ❌ FAIL | `undefined symbol: __isoc23_strtol` — requires GLIBC ≥2.38 |
 | @solana/web3.js CJS | `require('@solana/web3.js')` | ✅ PASS | Keypair, Connection etc. available |
 | @solana/web3.js ESM | `import * as web3 from '@solana/web3.js'` | ✅ PASS | Full ESM support on Node 22 |
-| @solana/kit (web3.js v2) ESM | `import('@solana/kit')` | ✅ PASS | ESM-only, works on Node 22 |
+| @solana/kit ESM | `import('@solana/kit')` | ✅ PASS | ESM-only, works on Node 22 |
 | @coral-xyz/anchor CJS | `require('@coral-xyz/anchor')` | ✅ PASS | Program, Provider etc. available |
 | @coral-xyz/anchor ESM | `import * as anchor from '@coral-xyz/anchor'` | ✅ PASS | Full ESM support on Node 22 |
 | IDL generation | `anchor idl build` (from program dir) | ✅ PASS | Generates valid JSON IDL with CLI 0.30.1 |
@@ -618,8 +688,8 @@ Environment: Rust 1.93, Solana CLI 2.2.16, Anchor CLI 0.30.1, Node 22.22.0, GLIB
 | Platform tools corruption | `cargo build-sbf` on fresh install | ❌ FAIL then PASS | Initial corruption due to disk space; fixed with `--force-tools-install` on adequate disk |
 
 ### Key Findings
-1. **litesvm 0.5.0 npm is BROKEN on Debian 12** (GLIBC 2.36) — use `solana-bankrun` as fallback
-2. **solana-bankrun works perfectly** on GLIBC 2.36 — recommended for Debian 12
+1. **litesvm 0.5.0 npm was broken on Debian 12** (GLIBC 2.36) — upgrade to litesvm 1.x, which ships cross-built gnu and musl binaries
+2. **solana-bankrun loaded** on GLIBC 2.36, but it is now deprecated — do not adopt it for new work
 3. **Platform-tools v1.48 needs ~2GB disk** for extraction — symlink `~/.cache/solana/` to a larger partition if root is small
 4. **Anchor CLI 0.30.1 successfully builds anchor-lang 0.32.1** — warnings only, no errors
 5. **Node 22 has full ESM+CJS support** for all Solana JS packages tested

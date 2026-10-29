@@ -7,6 +7,15 @@ description: Solana Kit plugin architecture, all-in-one RPC/LiteSVM plugins, sig
 
 Kit clients are built by chaining `.use(plugin)` calls onto `createClient()`. Each plugin extends the client with new properties or methods. Plugins that depend on others (e.g., RPC needs a payer) must come after their dependencies — TypeScript enforces this.
 
+## Contents
+
+- [All-in-One Clients](#all-in-one-clients)
+- [Client API Surface](#client-api-surface)
+- [Signer Plugins (`@solana/kit-plugin-signer`)](#signer-plugins-solanakit-plugin-signer)
+- [Custom Client Composition](#custom-client-composition)
+- [Plugin Catalog](#plugin-catalog)
+- [Building Custom Plugins](#building-custom-plugins)
+
 ## All-in-One Clients
 
 ### Production Client (mainnet/devnet/custom)
@@ -16,13 +25,16 @@ npm install @solana/kit @solana/kit-plugin-rpc @solana/kit-plugin-signer
 ```
 
 ```ts
-import { createClient } from '@solana/kit';
+import { createClient, lamports } from '@solana/kit';
 import { solanaRpc } from '@solana/kit-plugin-rpc';
 import { signer } from '@solana/kit-plugin-signer';
 
 const client = createClient()
   .use(signer(mySigner)) // sets payer + identity to the same keypair
-  .use(solanaRpc({ rpcUrl: 'https://api.mainnet-beta.solana.com' }));
+  .use(solanaRpc({
+    rpcUrl: 'https://api.mainnet-beta.solana.com',
+    transactionConfig: { version: 1, priorityFeeLamports: lamports(5_000n) }, // v1 by default for new code
+  }));
 
 await client.sendTransaction([myInstruction]);
 ```
@@ -37,7 +49,7 @@ await client.sendTransaction([myInstruction]);
 | `rpcSubscriptionsUrl` | `string` | WS endpoint (defaults to `rpcUrl` with `http`→`ws`) |
 | `rpcConfig` | `object` | Forwarded to `createSolanaRpc` |
 | `rpcSubscriptionsConfig` | `object` | Forwarded to `createSolanaRpcSubscriptions` |
-| `transactionConfig` | `object` | Tx planner options (priority fees, etc.) |
+| `transactionConfig` | `object` | Planner/executor options, discriminated on `version`. `{ version: 1, priorityFeeLamports?, estimateResourceLimits? }` for v1 (default for new code); `{ version?: 'legacy' \| 0, microLamportsPerComputeUnit? }` for historical formats. Omitting `version` yields v0 |
 | `maxConcurrency` | `number` | Concurrent tx limit (default: 10) |
 | `skipPreflight` | `boolean` | Always skip preflight (default: false) |
 
@@ -48,16 +60,18 @@ import { createClient } from '@solana/kit';
 import { solanaMainnetRpc, solanaDevnetRpc, solanaLocalRpc } from '@solana/kit-plugin-rpc';
 import { signer, signerFromFile } from '@solana/kit-plugin-signer';
 
+const transactionConfig = { version: 1 } as const;
+
 // Mainnet — type-narrowed; airdrop is NOT exposed
-const main = createClient().use(signer(s)).use(solanaMainnetRpc({ rpcUrl: '...' }));
+const main = createClient().use(signer(s)).use(solanaMainnetRpc({ rpcUrl: '...', transactionConfig }));
 
 // Devnet — defaults to https://api.devnet.solana.com, includes airdrop
-const dev = createClient().use(signer(s)).use(solanaDevnetRpc());
+const dev = createClient().use(signer(s)).use(solanaDevnetRpc({ transactionConfig }));
 
 // Local — defaults to http://127.0.0.1:8899, includes airdrop
 const local = await createClient()
   .use(signerFromFile('~/.config/solana/id.json'))
-  .use(solanaLocalRpc());
+  .use(solanaLocalRpc({ transactionConfig }));
 ```
 
 ### LiteSVM Test Client
@@ -73,7 +87,7 @@ import { airdropSigner, generatedSigner } from '@solana/kit-plugin-signer';
 
 const client = await createClient()
   .use(generatedSigner())
-  .use(litesvm())
+  .use(litesvm({ transactionConfig: { version: 1 } }))
   .use(airdropSigner(lamports(1_000_000_000n)));
 
 client.svm.setAccount(myTestAccount);
@@ -82,7 +96,70 @@ client.svm.addProgramFromFile(myProgramAddress, 'program.so');
 await client.sendTransaction([myInstruction]);
 ```
 
-`litesvm()` is Node.js only. Browser/React Native builds throw.
+`litesvm()` is Node.js only. Browser/React Native builds throw. Its v1 planner writes maximum resource limits instead of estimating; override with `computeUnitLimit` / `loadedAccountsDataSizeLimit` in `transactionConfig`.
+
+### Surfpool Test Client (`@solana/surfpool/kit`)
+
+Same shape as the LiteSVM client, but backed by a real surfnet with a full JSON-RPC endpoint, lazy mainnet forking, and cheatcodes. Use it when a test needs RPC/WebSocket or mainnet account state; use `litesvm()` when in-process is enough.
+
+```bash
+npm install @solana/kit @solana/kit-plugin-rpc @solana/kit-plugin-signer @solana/surfpool
+```
+
+```ts
+import { createClient } from '@solana/kit';
+import { surfpool } from '@solana/surfpool/kit';
+
+// Embedded surfnet on dynamic ports — async, so await the chain
+const client = await createClient().use(surfpool());
+
+client.payer;      // pre-funded KeyPairSigner, no airdrop plugin needed
+client.cheatcodes; // typed surfnet_* RPC (prefix stripped, responses unwrapped)
+client.surfnet;    // native Surfnet handle
+
+await client.sendTransaction([myInstruction]);
+client.surfnet.stop(); // wire into afterAll — teardown is not automatic
+```
+
+`surfpool()` brings its own signer, so it needs no `generatedSigner()`. Passing `surfpool({ rpcUrl })` attaches to a running `surfpool start` instead of booting one — that form is synchronous and requires a `payer` already on the client. Full reference: [../surfpool/kit-plugin.md](../surfpool/kit-plugin.md).
+
+### Browser Wallet Client (`@solana/kit-plugin-wallet`)
+
+Wallet Standard-based wallet connection as a Kit plugin — the wallet fills the signer role(s) instead of a keypair:
+
+```bash
+npm install @solana/kit @solana/kit-plugin-rpc @solana/kit-plugin-wallet
+```
+
+```ts
+import { createClient } from '@solana/kit';
+import { solanaRpc } from '@solana/kit-plugin-rpc';
+import { walletSigner } from '@solana/kit-plugin-wallet';
+
+const client = createClient()
+  .use(walletSigner({ chain: 'solana:mainnet' }))
+  .use(solanaRpc({
+    rpcUrl: 'https://api.mainnet-beta.solana.com',
+    transactionConfig: { version: 1 },
+  })); // bundles tx planning + sending
+
+// Discover and connect a Wallet Standard wallet
+const { wallets } = client.wallet.getState();
+await client.wallet.connect(wallets[0]);
+
+// Check the wallet signs v1 before sending it one
+const { connected } = client.wallet.getState();
+if (!connected?.supportedTransactionVersions.has(1)) {
+  throw new Error('Wallet does not support transaction v1 yet — route through a version: 0 client');
+}
+
+// The connected wallet is now the payer/identity
+await client.sendTransaction([myInstruction]);
+```
+
+`supportedTransactionVersions` (0.20+) is the intersection of what the wallet accepts across its signing features; a wallet that predates versioned transactions reports `Set(['legacy'])`. See [transactions-v1.md](../transactions-v1.md#wallets).
+
+Variants mirror the signer plugin roles: `walletSigner` (both roles), `walletPayer`, `walletIdentity`, plus `walletWithoutSigner` for discovery/connection state only. In React apps, use the hooks from `@solana/kit-plugin-wallet/react` together with `ClientProvider` from `@solana/react` — see [react.md](react.md).
 
 ---
 
@@ -112,7 +189,7 @@ In most apps both roles are the same keypair, so **default to the `signer*` vari
 
 | Plugin | Behavior |
 |---|---|
-| `signer(s)` / `payer(s)` / `identity(s)` | Install an existing `TransactionSigner` |
+| `signer(s)` / `payer(s)` / `identity(s)` | Install an existing `TransactionSigner` (including a Solana Keychain signer — see [keychain.md](../keychain.md)) |
 | `generatedSigner()` / `generatedPayer()` / `generatedIdentity()` | Async; generate a new keypair |
 | `generatedSignerWithSol(amount)` / `generatedPayerWithSol(amount)` / `generatedIdentityWithSol(amount)` | Async; generate + airdrop. Requires an airdrop function already on the client (for low-level composition, install `rpcAirdrop()` first). |
 | `signerFromFile(path)` / `payerFromFile(path)` / `identityFromFile(path)` | Async; load keypair from a JSON file |
@@ -211,9 +288,12 @@ const client = await createClient()
 |---------|---------|---------|
 | `@solana/kit-plugin-rpc` | `solanaRpc`, `solanaMainnetRpc`, `solanaDevnetRpc`, `solanaLocalRpc`, `rpc`, `solanaRpcConnection`, `rpcAirdrop`, `rpcGetMinimumBalance`, `rpcTransactionPlanner`, `rpcTransactionPlanExecutor` | RPC connectivity + tx planning/execution |
 | `@solana/kit-plugin-signer` | `signer*` (default — sets both roles), `payer*`, `identity*` (role-specific); each comes in plain, `generated*`, `*WithSol`, `*FromFile`, and `airdrop*` forms | Signer management |
+| `@solana/kit-plugin-wallet` | `walletSigner`, `walletPayer`, `walletIdentity`, `walletWithoutSigner` | Browser wallet connection (Wallet Standard); adds `client.wallet` |
 | `@solana/kit-plugin-litesvm` | `litesvm`, `litesvmConnection`, `litesvmAirdrop`, `litesvmTransactionPlanner`, `litesvmTransactionPlanExecutor` | In-memory test environment |
-| `@solana/kit-plugin-airdrop` | `airdrop`, `rpcAirdrop` | SOL faucet (typically pulled in transitively) |
-| `@solana/kit-plugin-instruction-plan` | `planAndSendTransactions` | Instruction batching + sending sugar |
+| `@solana/kit-plugin-instruction-plan` | `planAndSendTransactions`, `transactionPlanner`, `transactionPlanExecutor` | Instruction batching + sending sugar (bundled into `solanaRpc`; install directly only for custom low-level composition) |
+| `@solana/surfpool/kit` | `surfpool`, `surfnetCheatcodes`, `createSurfnetCheatcodesRpc` | Embedded (or attached) Surfnet test environment; adds `client.cheatcodes`, `client.surfnet`, `client.rpcUrl`, `client.wsUrl` |
+
+**Deprecated — do not install:** `@solana/kit-plugins` (umbrella), `@solana/kit-plugin-airdrop` (use `rpcAirdrop` / `litesvmAirdrop`), `@solana/kit-plugin-payer` (use `@solana/kit-plugin-signer`), `@solana/kit-client-rpc` / `@solana/kit-client-litesvm` (use the all-in-one plugins above).
 
 ### Program Plugins
 
@@ -238,13 +318,18 @@ await client.token.instructions
 
 | Package | Plugin | Adds |
 |---------|--------|------|
-| `@solana-program/token` | `tokenProgram()` | `client.token.instructions` (createMint, mintToATA, transferToATA, etc.) |
+| `@solana-program/token` | `tokenProgram()` | `client.token` (createMint, mintToATA, transferToATA, batch, etc.) |
+| `@solana-program/token-2022` | `token2022Program()` | `client.token2022` (Token Extensions operations) |
+| `@solana-program/system` | `systemProgram()` | `client.system` (account creation, transfers, nonces) |
+| `@solana-program/compute-budget` | `computeBudgetProgram()` | `client.computeBudget` (CU limits, priority fees) |
+| `@solana-program/memo` | `memoProgram()` | `client.memo` |
 
 ### Example Implementations
 
 | Package | Exports | Purpose | Code Example |
 |---------|---------|---------|--------------|
-| `@solana/kora` | `createKitKoraClient`, `koraPlugin` | Gasless transactions | https://github.com/solana-foundation/kora/blob/main/sdks/ts/src/kit/index.ts |
+| `@solana/keychain-kit-plugin` | `keychainSigner`, `keychainPayer`, `keychainIdentity` | Server-side signers (KMS, Vault, MPC, managed wallets) as client `payer` / `identity`; Kit 8.1+. See [keychain.md](../keychain.md) | https://github.com/solana-foundation/solana-keychain/tree/main/typescript/packages/kit-plugin |
+| `@solana/kora` | `createKitKoraClient`, `koraPlugin` (stable); `kora` from `@solana/kora/kit` (beta) | Gasless transactions. Targets Kit 6 (stable) / Kit 7 (beta) and builds v0. See [kora.md](../kora.md) | https://github.com/solana-foundation/kora/blob/ts-sdk-v0.2.1/sdks/ts/src/kit/index.ts |
 
 ---
 
