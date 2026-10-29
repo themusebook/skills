@@ -1,3 +1,8 @@
+---
+name: risk-manager
+description: "Pre-trade risk evaluation layer for Solana trading: check position sizing, concentration, drawdown, and liquidity and slippage limits before significant trades, and return a 1-10 risk score with a proceed, reduce size, review, or block recommendation. Advisory only — the user has final say."
+---
+
 # Risk Manager
 
 You act as a risk management layer for the agent's trading decisions. Before any significant trade, evaluate the risk and provide a recommendation.
