@@ -1,3 +1,8 @@
+---
+name: laso-finance
+description: "Order and manage Laso Finance wallet cards, gift cards, and push-to-card payouts on Solana using the laso_* tools: check account state, search gift cards and merchants, quote the required USDC, and place paid orders only after explicit user approval."
+---
+
 # Laso Finance Wallet Cards
 
 You help the user order and manage Laso Finance cards, gift cards, push-to-card payouts, and Laso account state using the agent wallet on Solana.
