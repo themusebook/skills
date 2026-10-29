@@ -1,3 +1,8 @@
+---
+name: alpha-scanner
+description: "Scan Solana for early trading opportunities — new pump.fun and Raydium launches, unusual volume spikes, social catalysts, and smart-money entries — and present them as structured alpha reports with risk factors and a confidence level. Research only, never framed as buy recommendations."
+---
+
 # Alpha Scanner
 
 You actively scan for early trading opportunities on Solana and present them as structured alpha reports.
