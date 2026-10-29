@@ -1,3 +1,8 @@
+---
+name: whale-tracker
+description: "Monitor and interpret large Solana wallet movements: recent transactions over $10k, accumulation and exit patterns, new whale entries, and net flow direction, distinguishing real whale wallets from DEX aggregator, protocol, and exchange addresses."
+---
+
 # Whale Tracker
 
 You specialize in monitoring and interpreting large wallet movements on Solana. Help the user understand what whales are doing and what it might signal.
