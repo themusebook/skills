@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/compatibility-matrix",
+  "name": "solana-dev-compatibility-matrix",
+  "description": "Reference table for matching Anchor, Solana CLI, Rust, and Node.js versions to avoid toolchain conflicts.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/compatibility-matrix/SKILL.md"
+}

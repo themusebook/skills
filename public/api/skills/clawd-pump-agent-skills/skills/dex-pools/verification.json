@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/dex-pools",
+  "name": "dex-pools",
+  "description": "Solana DEX liquidity, OHLCV candles, and venue discovery for any token/pool via GeckoTerminal (keyless). Use to sanity-check swap slippage, find the deepest venue, and read price history.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dex-pools/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dex-pools/metadata.json",
+  "bundleHash": "sha256-99a58c5f9fc381dcdb3a170fadeceabf240f6ef25d75db09a5b32ae923838a07",
+  "merkleLeaf": "sha256-9f8ed8aeebc8e79fc08e07d3dd9f3d67270c632e2379037136130f02a9e591fc",
+  "files": [
+    {
+      "path": "references/api-endpoints.md",
+      "bytes": 2355,
+      "sha256": "sha256-8fbb599025c0fd8cede7f9b93ede6cbd4870bec4c58ce939c506f2fe596fd1f1"
+    },
+    {
+      "path": "scripts/dexpools.py",
+      "bytes": 7056,
+      "sha256": "sha256-062a72aa4c30f8f1ee7a5625d8798ab535fbae9ac8b9eee0df68d5c1c813fd5e"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3626,
+      "sha256": "sha256-47441a1993f1894619204aa79083dab4681154edc4088ab15c07592b39b6d2cc"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

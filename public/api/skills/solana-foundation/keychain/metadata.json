@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/keychain",
+  "name": "solana-dev-keychain",
+  "description": "Solana Keychain — one signing interface over KMS, Vault, MPC custody, and managed-wallet backends; Kit 8 plugin client setup, production rules, and links to the full docs.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/keychain/SKILL.md"
+}

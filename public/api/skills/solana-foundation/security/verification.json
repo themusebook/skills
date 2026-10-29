@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/security",
+  "name": "solana-dev-security",
+  "description": "Program and client security checklist covering account validation, signer checks, and common attack vectors to review before deploying.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/security/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/security/metadata.json",
+  "bundleHash": "sha256-4b044d1f1cefb9a417203c84fa02078fb38cb1a229b2fdcbbbdb5ba9ceda9958",
+  "merkleLeaf": "sha256-e2aef51c534f5745b51fc5fc0f1c8df2a28b5c788838354d8487b3f870c5f322",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 34694,
+      "sha256": "sha256-3e388618f0064130b8a4a131c073285673128767102aa79b22092e076c45c9dc"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

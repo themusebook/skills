@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/clawpump",
+  "name": "clawpump",
+  "description": "ClawPump on Solana — create/chat with agents, trade, perps, DCA, lend, launch tokens, marketplace, predictions, gift cards, agent email, intelligence via mcp_clawpump_* tools. Use when the user mentions ClawPump, launching a token, an agent's wallet/balance, swaps, perps, gift cards, agent email, or DeFi on Solana.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/clawpump/SKILL.md"
+}

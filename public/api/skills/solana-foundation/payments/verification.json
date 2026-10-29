@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/payments",
+  "name": "solana-dev-payments",
+  "description": "Build checkout flows, payment buttons, and QR-based payment requests using Solana Pay conventions, Kit instruction builders, and Kora for gasless flows.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/payments/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/payments/metadata.json",
+  "bundleHash": "sha256-9c2472c25fd4837e76a91968ca7256bb5e49f03394abb52eba83795957b011e6",
+  "merkleLeaf": "sha256-914750a505f12751f1f420a3338cac54ea99306e34ae1379efb32c146b71fe5f",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 3931,
+      "sha256": "sha256-ded46da2b2758cb54b598c5615e1e9fea2483f6f870e8a943cf27efc1fd84634"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

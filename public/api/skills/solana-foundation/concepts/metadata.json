@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/concepts",
+  "name": "solana-dev-concepts",
+  "description": "How Solana's runtime actually works — rent as a deposit, Ed25519 keys and off-curve PDAs, entrypoint dispatch, on-chain cryptography, and the transaction wire format.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/concepts/SKILL.md"
+}

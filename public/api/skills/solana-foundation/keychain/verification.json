@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/keychain",
+  "name": "solana-dev-keychain",
+  "description": "Solana Keychain — one signing interface over KMS, Vault, MPC custody, and managed-wallet backends; Kit 8 plugin client setup, production rules, and links to the full docs.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/keychain/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/keychain/metadata.json",
+  "bundleHash": "sha256-875d4a72e797019e04c30733a6cf6589a5e9796066644a623eefb0938d25f022",
+  "merkleLeaf": "sha256-49e00d59b019dd8dccc0c66e3f8112b7edb0641b5df26cf5fea418c6a0deefea",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 9291,
+      "sha256": "sha256-8d92bbb0ec14e4e913b26c5e6081bdd7b309c491a97cacf82db989d2cbeebbda"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/clawpump",
+  "name": "clawpump",
+  "description": "ClawPump on Solana — create/chat with agents, trade, perps, DCA, lend, launch tokens, marketplace, predictions, gift cards, agent email, intelligence via mcp_clawpump_* tools. Use when the user mentions ClawPump, launching a token, an agent's wallet/balance, swaps, perps, gift cards, agent email, or DeFi on Solana.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawpump/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawpump/metadata.json",
+  "bundleHash": "sha256-c4043d835c403a24af6e85ff0c0826f93b05978f6263a45f80c55ddac8682927",
+  "merkleLeaf": "sha256-6afa728b256536a6cc3c6ac276da10150cbc5366b4b4ed2a1d9757012e69a8ff",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 15499,
+      "sha256": "sha256-2966484cfcb88faaaf18f52aa321d88ab1409945a4b1a7bc384e9fa9d7d535eb"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

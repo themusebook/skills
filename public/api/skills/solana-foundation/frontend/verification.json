@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/frontend",
+  "name": "solana-dev-frontend",
+  "description": "Build React and Next.js Solana apps with a Kit plugin client, Wallet Standard connection via @solana/kit-plugin-wallet (+ its React hooks), and @solana/react client bindings.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/frontend/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/frontend/metadata.json",
+  "bundleHash": "sha256-bd7c32dd2f5c27d4d83036ac170050697e1d82bab916da28e47831446e92ba56",
+  "merkleLeaf": "sha256-d95f7c5f28b378a8116e0004542f43c9606b9b514dc7d0b626516f0ec1b4c027",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 13530,
+      "sha256": "sha256-fcf0684b7dbc5733af9a2d91fad0d37e608e167f1efc0e9d14ab4260d7d411a3"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

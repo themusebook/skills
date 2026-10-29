@@ -54,6 +54,84 @@
     "category": "Solana / Blockchain"
   },
   {
+    "slug": "clawd-pump-agent-skills/skills/alpha-scanner",
+    "name": "alpha-scanner",
+    "description": "Scan Solana for early trading opportunities — new pump.fun and Raydium launches, unusual volume spikes, social catalysts, and smart-money entries — and present them as structured alpha reports with risk factors and a confidence level. Research only, never framed as buy recommendations.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/clawhunter-bounties",
+    "name": "clawhunter-bounties",
+    "description": "Find, triage, and work crowdsourced crypto bounties across venues (Pump Fun GO, tiny.place, EarnFi, Atelier, +more) through the Claw Hunter API (clawhunter.fun). Use when hunting paid crypto/social bounties, finding paid work or jobs your agent can do, matching open bounties to your agent's capabilities, planning how to complete one, or checking whether a creator has a real payout track record before committing. Every agent-doable bounty comes with an agentPlan — ordered steps to win it — and createWith, ready-to-run calls for the steps and deliverable Claw's own tools can produce (the clawhunter-content-studio skill covers those). Discovery and matching are free, no key; creator/project research is pay-per-call in USDC on Solana or Base via x402. Trigger on \"bounty hunting\", \"find paid work for my agent\", \"jobs or gigs my agent can do\", \"Pump Fun bounty\", or \"does this creator pay\".",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/clawhunter-content-studio",
+    "name": "clawhunter-content-studio",
+    "description": "Give an agent a real voice, finished media, and factual research. Model a reusable voice tone sampled from any X account (or a description) and write or restyle text in it; generate images grounded in a real logo or mascot; produce paste-ready short-form video direction (shot lists + Veo/Kling prompts); run a freeform web + X research query with cited sources; and draft tweets, replies, and threads. Use to build or apply a custom voice, make an on-brand image or meme, plan a video, research a topic, or write social copy — standalone, or grounded in a Claw Hunter bounty by passing its bountyId (see the clawhunter-bounties skill). Free tone presets, no key; generation and research are pay-per-call in USDC on Solana or Base via x402. API at clawhunter.fun.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/clawpump",
+    "name": "clawpump",
+    "description": "ClawPump on Solana — create/chat with agents, trade, perps, DCA, lend, launch tokens, marketplace, predictions, gift cards, agent email, intelligence via mcp_clawpump_* tools. Use when the user mentions ClawPump, launching a token, an agent's wallet/balance, swaps, perps, gift cards, agent email, or DeFi on Solana.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/dca-strategy",
+    "name": "dca-strategy",
+    "description": "Plan and execute dollar-cost averaging strategies on Solana tokens: set the token, total budget, frequency, duration, and source token, then run equal-amount interval buys with per-buy reporting and weekly summaries. Always confirms the strategy with the user before starting.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/dex-pools",
+    "name": "dex-pools",
+    "description": "Solana DEX liquidity, OHLCV candles, and venue discovery for any token/pool via GeckoTerminal (keyless). Use to sanity-check swap slippage, find the deepest venue, and read price history.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/laso-finance",
+    "name": "laso-finance",
+    "description": "Order and manage Laso Finance wallet cards, gift cards, and push-to-card payouts on Solana using the laso_* tools: check account state, search gift cards and merchants, quote the required USDC, and place paid orders only after explicit user approval.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/meme-analyzer",
+    "name": "meme-analyzer",
+    "description": "Evaluate Solana meme tokens with a structured framework — liquidity depth, holder distribution, social sentiment, and rug-pull red flags — then score each token 0-100 with a risk level and a short verdict. Analysis only; never recommends buying a token.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/risk-manager",
+    "name": "risk-manager",
+    "description": "Pre-trade risk evaluation layer for Solana trading: check position sizing, concentration, drawdown, and liquidity and slippage limits before significant trades, and return a 1-10 risk score with a proceed, reduce size, review, or block recommendation. Advisory only — the user has final say.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/rug-check",
+    "name": "rug-check",
+    "description": "Solana token safety diligence: mint/freeze authority, LP lock/burn, top-holder concentration, RugCheck score. Read-only — run before swapping into or launching alongside any token.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/straight-talk",
+    "name": "straight-talk",
+    "description": "Turn an agent's trades, launches, and holdings into honest, hype-free social posts as SOAG: no price promises or targets, losses admitted plainly, traps flagged in the post itself, and every claim traced to a real number, signed off in under 280 characters.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/survivor-check",
+    "name": "survivor-check",
+    "description": "Survival-first check for Solana tokens before any buy: verify the token's age, that liquidity is still present, and that volume is two-sided, then assign a Bronze-to-Diamond survivor tier, score trap risk, and return a survivor, wait, or that's-the-trap verdict.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "clawd-pump-agent-skills/skills/whale-tracker",
+    "name": "whale-tracker",
+    "description": "Monitor and interpret large Solana wallet movements: recent transactions over $10k, accumulation and exit patterns, new whale entries, and net flow direction, distinguishing real whale wallets from DEX aggregator, protocol, and exchange addresses.",
+    "category": "Solana / Blockchain"
+  },
+  {
     "slug": "clawd-skills-installer",
     "name": "clawd-skills-installer",
     "description": "Install and make Clawd, Cheshire Terminal, Solizardking, Vercel, and eve agent skills available to local coding agents. Use when a user asks to add all skills, install this repo with npx github, install into ~/.agents/skills, ~/.codex/skills, ~/.claude/skills, or an eve project's agent/skills directory.",
@@ -291,6 +369,12 @@
     "slug": "magicblock",
     "name": "magicblock",
     "description": "MagicBlock Ephemeral Rollups development patterns for Solana. Covers delegation/undelegation flows, dual-connection architecture (base layer + ER), cranks for scheduled tasks, VRF for verifiable randomness, magic actions for atomic ER-commit + base-layer follow-ups, private payments API (deposits, transfers, withdrawals, swaps, and challenge/login auth flow), commit sponsorship and fee vault wiring, lamports top-up for delegated accounts, and TypeScript/Anchor integration. Use for high-performance gaming, real-time apps, private transfers and swaps, and fast transaction throughput on Solana.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "metaplex",
+    "name": "metaplex",
+    "description": "Official Metaplex Skill for Solana — a SKILL.md router with progressive-disclosure reference files giving AI coding agents accurate knowledge of Metaplex programs, CLI commands, and SDK patterns. Use when building with the Metaplex Agent Registry, Genesis token launches, Core NFTs and plugins, Token Metadata, Bubblegum compressed NFTs, or Core Candy Machine drops, via the mplx CLI, the Umi SDK, or (Token Metadata only) the Kit SDK (@solana/kit). Hub entry: install the official skill with `npx skills add metaplex` for the full reference files.",
     "category": "Solana / Blockchain"
   },
   {
@@ -578,13 +662,109 @@
   {
     "slug": "solana-dev",
     "name": "solana-dev",
-    "description": "Use when user asks to \"build a Solana dapp\", \"write an Anchor program\", \"create a token\", \"debug Solana errors\", \"set up wallet connection\", \"test my Solana program\", \"deploy to devnet\", or \"explain Solana concepts\" (rent, accounts, PDAs, CPIs, etc.). Also use for quick on-chain lookups via public RPC + curl — \"what's the balance of <wallet>\", \"look up transaction <sig>\", \"token balance for <account>\", \"check this address on mainnet/devnet\". End-to-end Solana development playbook covering wallet connection, Anchor/Pinocchio programs, Codama client generation, LiteSVM/Mollusk/Surfpool testing, security checklists, and JSON-RPC curl lookups against public clusters. Integrates with the Solana MCP server for live documentation search. Prefers framework-kit (@solana/client + @solana/react-hooks) for UI, wallet-standard-first connection (incl. ConnectorKit), @solana/kit for client/RPC code, and @solana/web3-compat for legacy boundaries.",
+    "description": "Use when user asks to \"build a Solana dapp\", \"write an Anchor program\", \"create a token\", \"debug Solana errors\", \"set up wallet connection\", \"test my Solana program\", \"fuzz my Solana program\", \"deploy to devnet\", \"send a v1 transaction\", \"support larger transactions\", \"fix maxSupportedTransactionVersion\", or \"explain Solana concepts\" (rent, accounts, PDAs, CPIs). Also for program architecture (state layout, compute units, throughput, naming), quick on-chain lookups via public RPC + curl, gasless or sponsored-fee transactions (Kora), server-side signing with KMS/Turnkey/Privy/Fireblocks (Solana Keychain), and issuing stablecoins or allowlisted tokens (Mosaic). Covers wallets, Anchor/Pinocchio, Codama clients, Surfpool/LiteSVM/Mollusk testing, security review, and v1 transactions (SIMD-0385). Prefers @solana/kit 8 plugin clients building transaction v1 by default, @solana/kit-plugin-wallet + @solana/react for wallets, web3.js v3 as the legacy migration target, and Surfpool for local networks.",
     "category": "Solana / Blockchain"
   },
   {
     "slug": "solana-formal-verification",
     "name": "qedgen",
     "description": "Formally verify programs by writing Lean 4 proofs. Trigger this skill whenever the user wants to formally verify code, generate Lean 4 proofs, prove properties about algorithms or smart contracts, verify invariants, convert program logic into formal specifications, or anything involving Lean 4 and formal verification. Also trigger when the user mentions \"qedgen\", \"lean proof\", \"formal proof\", \"verify my code\", \"prove correctness\", \"formal verification\", or wants mathematical guarantees about their implementation.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/common-errors",
+    "name": "solana-dev-common-errors",
+    "description": "Diagnose and fix common errors encountered when building on Solana, including GLIBC issues, Anchor version conflicts, and RPC errors.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/compatibility-matrix",
+    "name": "solana-dev-compatibility-matrix",
+    "description": "Reference table for matching Anchor, Solana CLI, Rust, and Node.js versions to avoid toolchain conflicts.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/concepts",
+    "name": "solana-dev-concepts",
+    "description": "How Solana's runtime actually works — rent as a deposit, Ed25519 keys and off-curve PDAs, entrypoint dispatch, on-chain cryptography, and the transaction wire format.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/confidential-transfers",
+    "name": "solana-dev-confidential-transfers",
+    "description": "Implement private, encrypted token balances on Solana using the Token-2022 confidential transfers extension.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/frontend",
+    "name": "solana-dev-frontend",
+    "description": "Build React and Next.js Solana apps with a Kit plugin client, Wallet Standard connection via @solana/kit-plugin-wallet (+ its React hooks), and @solana/react client bindings.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/idl-codegen",
+    "name": "solana-dev-idl-codegen",
+    "description": "Generate type-safe program clients from IDLs using Codama, eliminating hand-maintained serializers across languages.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/keychain",
+    "name": "solana-dev-keychain",
+    "description": "Solana Keychain — one signing interface over KMS, Vault, MPC custody, and managed-wallet backends; Kit 8 plugin client setup, production rules, and links to the full docs.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/kit-web3-interop",
+    "name": "solana-dev-kit-web3-interop",
+    "description": "How to handle legacy web3.js code — web3.js v3 (Kit internals, 3.0.0 since Oct 2026) is the migration target; defer migration mechanics to the official migration skill.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/kora",
+    "name": "solana-dev-kora",
+    "description": "Kora paymaster — when to use it, operator quick start, security controls, and links to the full docs.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/mosaic",
+    "name": "solana-dev-mosaic",
+    "description": "Mosaic SDK — Token-2022 templates for stablecoins, tokenized securities, arcade tokens and money-market funds, sRFC-37 allowlist/blocklist compliance, Kit-version caveats, and when to hand-roll with @solana-program/token-2022 instead.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/payments",
+    "name": "solana-dev-payments",
+    "description": "Build checkout flows, payment buttons, and QR-based payment requests using Solana Pay conventions, Kit instruction builders, and Kora for gasless flows.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/resources",
+    "name": "solana-dev-resources",
+    "description": "Authoritative Solana learning platforms, documentation, tooling references, and community resources.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/rpc-quick-lookups",
+    "name": "solana-dev-rpc-quick-lookups",
+    "description": "Quick on-chain lookups via public RPC + curl — wallet balance, a specific transaction, a token account balance, account info. No SDK install, no project setup.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/security",
+    "name": "solana-dev-security",
+    "description": "Program and client security checklist covering account validation, signer checks, and common attack vectors to review before deploying.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/testing",
+    "name": "solana-dev-testing",
+    "description": "A testing pyramid for Solana programs using LiteSVM and Mollusk for fast unit tests and Surfpool (CLI or embedded SDK) as the integration-testing centerpiece, with mainnet forking, cheatcodes, and CI patterns.",
+    "category": "Solana / Blockchain"
+  },
+  {
+    "slug": "solana-foundation/transactions-v1",
+    "name": "solana-dev-transactions-v1",
+    "description": "The v1 transaction format that raises the size limit to 4096 bytes — the default for new code. Send it through @solana/kit plugin clients (transactionConfig version 1), read and index it without breaking, and fall back to manual pipe() or the Rust 4.x crates when needed.",
     "category": "Solana / Blockchain"
   },
   {
@@ -753,12 +933,6 @@
     "slug": "zk-omni-messaging",
     "name": "zk-omni-messaging",
     "description": "Zero-knowledge omnichain messaging between Robinhood Chain and Solana using CheshireZkOmniMessenger (msgType 4) with nullifier anti-replay and the zk-omni-relayer service.",
-    "category": "Solana / Blockchain"
-  },
-  {
-    "slug": "zkrouter",
-    "name": "zkrouter",
-    "description": "Self-hosted OpenAI-compatible LLM router — smart tier-based routing, ZK-stamped routing decisions, mode overrides, free OpenRouter at install via the Birth bot. Save 60-80% on inference costs by routing to the cheapest capable model across 12+ OpenRouter models.",
     "category": "Solana / Blockchain"
   },
   {

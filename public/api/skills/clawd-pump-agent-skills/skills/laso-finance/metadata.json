@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/laso-finance",
+  "name": "laso-finance",
+  "description": "Order and manage Laso Finance wallet cards, gift cards, and push-to-card payouts on Solana using the laso_* tools: check account state, search gift cards and merchants, quote the required USDC, and place paid orders only after explicit user approval.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/laso-finance/SKILL.md"
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/confidential-transfers",
+  "name": "solana-dev-confidential-transfers",
+  "description": "Implement private, encrypted token balances on Solana using the Token-2022 confidential transfers extension.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/confidential-transfers/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/confidential-transfers/metadata.json",
+  "bundleHash": "sha256-5fc1e981395ed380daf970d8a6c041bae1741e3c7524274bed34b0aff88f9fc7",
+  "merkleLeaf": "sha256-dd46154ca5055ab6c9b5b5e4f0b27e6fceb0239dba985ce75d165f91fbcc57da",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 27553,
+      "sha256": "sha256-cda955b8055b68be059b5bab5ee6f760ed44e7859f767d733fa149e86903327d"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

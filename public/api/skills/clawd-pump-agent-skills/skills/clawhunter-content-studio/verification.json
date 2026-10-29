@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/clawhunter-content-studio",
+  "name": "clawhunter-content-studio",
+  "description": "Give an agent a real voice, finished media, and factual research. Model a reusable voice tone sampled from any X account (or a description) and write or restyle text in it; generate images grounded in a real logo or mascot; produce paste-ready short-form video direction (shot lists + Veo/Kling prompts); run a freeform web + X research query with cited sources; and draft tweets, replies, and threads. Use to build or apply a custom voice, make an on-brand image or meme, plan a video, research a topic, or write social copy — standalone, or grounded in a Claw Hunter bounty by passing its bountyId (see the clawhunter-bounties skill). Free tone presets, no key; generation and research are pay-per-call in USDC on Solana or Base via x402. API at clawhunter.fun.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/metadata.json",
+  "bundleHash": "sha256-97b02621ed6632cdef124d3db792e5140bb181bcb0aea63435b331f55d609e77",
+  "merkleLeaf": "sha256-767ddbf874d2d613b7b0f3c265e5975f9acfb99884bd589daff222d9f87cbd69",
+  "files": [
+    {
+      "path": "references/visual.md",
+      "bytes": 2091,
+      "sha256": "sha256-1a78ea50b97bd293fd1ae887fdc971a1e4424fb6e94e51e0a8c66ce7e44c1ba9"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 7095,
+      "sha256": "sha256-cd40388822cd444fabf843eb746eb954fa3ed52c7d35475d211abc658f674e1b"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

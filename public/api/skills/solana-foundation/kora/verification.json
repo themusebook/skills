@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/kora",
+  "name": "solana-dev-kora",
+  "description": "Kora paymaster — when to use it, operator quick start, security controls, and links to the full docs.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/kora/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/kora/metadata.json",
+  "bundleHash": "sha256-43af49b64048889554d847562087bfc0f8bef46704163f044516f4904f5823bd",
+  "merkleLeaf": "sha256-cab81331c9a0d1cae1046a44de502893d74ed0bad121691003728d4a4707f188",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 7405,
+      "sha256": "sha256-bed589559358f2905bfe991e0b33a4828631b26df3c40568d4d99698ef4c903b"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/compatibility-matrix",
+  "name": "solana-dev-compatibility-matrix",
+  "description": "Reference table for matching Anchor, Solana CLI, Rust, and Node.js versions to avoid toolchain conflicts.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/compatibility-matrix/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/compatibility-matrix/metadata.json",
+  "bundleHash": "sha256-08cef64e99c9964f744c59a9e921b41fcfac0871f7e8141bc6da7b6aa1820439",
+  "merkleLeaf": "sha256-2a88115487ffa55e213b9a2c1b28fd80a73098c755c7291ad049f80afc5bca24",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 26237,
+      "sha256": "sha256-67ee296dbbf5656b255f8eb2b421365e3d1d646de332b8c3eadae866616ed26f"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

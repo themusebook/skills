@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/mosaic",
+  "name": "solana-dev-mosaic",
+  "description": "Mosaic SDK — Token-2022 templates for stablecoins, tokenized securities, arcade tokens and money-market funds, sRFC-37 allowlist/blocklist compliance, Kit-version caveats, and when to hand-roll with @solana-program/token-2022 instead.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/mosaic/SKILL.md"
+}

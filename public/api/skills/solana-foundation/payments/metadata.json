@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/payments",
+  "name": "solana-dev-payments",
+  "description": "Build checkout flows, payment buttons, and QR-based payment requests using Solana Pay conventions, Kit instruction builders, and Kora for gasless flows.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/payments/SKILL.md"
+}

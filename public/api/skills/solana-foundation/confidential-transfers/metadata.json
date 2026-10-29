@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/confidential-transfers",
+  "name": "solana-dev-confidential-transfers",
+  "description": "Implement private, encrypted token balances on Solana using the Token-2022 confidential transfers extension.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/confidential-transfers/SKILL.md"
+}

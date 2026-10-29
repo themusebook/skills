@@ -7,9 +7,9 @@
   "cluster": "mainnet-beta",
   "status": "anchor-ready",
   "hashAlgorithm": "sha256",
-  "totalSkills": 599,
-  "catalogHash": "sha256-e8a82c4c5c981001a155c7f4b9fa87f5cb4e47c362687334fb06fd58e44a5356",
-  "merkleRoot": "sha256-b3e23d917d7b59829d9deab9d46600a1bc310f0031abb9e149ae9bba35328c49",
+  "totalSkills": 628,
+  "catalogHash": "sha256-1461d37cade8eef4cf59fd1669849cfb82d076cf3fc8ad17687c75bd66a426ea",
+  "merkleRoot": "sha256-0d0a18afe93788134c3ef84e6f4b1e287d0d7d63a18826243ff73ddbded0e66d",
   "solana": {
     "registryProgramId": null,
     "registryPda": null,
@@ -124,6 +124,149 @@
       "fileCount": 2,
       "metadata": "/api/skills/clawd-agent-launchpad/metadata.json",
       "verification": "/api/skills/clawd-agent-launchpad/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/alpha-scanner",
+      "name": "alpha-scanner",
+      "description": "Scan Solana for early trading opportunities — new pump.fun and Raydium launches, unusual volume spikes, social catalysts, and smart-money entries — and present them as structured alpha reports with risk factors and a confidence level. Research only, never framed as buy recommendations.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-e33227403811bb203bc4657eaac0b0fb23c56cb6d9af86c902151abaadcdd724",
+      "merkleLeaf": "sha256-f59f23ae098d164abcbc1b12cd9b33f233ca407fdf72571377fe387c35875a65",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/clawhunter-bounties",
+      "name": "clawhunter-bounties",
+      "description": "Find, triage, and work crowdsourced crypto bounties across venues (Pump Fun GO, tiny.place, EarnFi, Atelier, +more) through the Claw Hunter API (clawhunter.fun). Use when hunting paid crypto/social bounties, finding paid work or jobs your agent can do, matching open bounties to your agent's capabilities, planning how to complete one, or checking whether a creator has a real payout track record before committing. Every agent-doable bounty comes with an agentPlan — ordered steps to win it — and createWith, ready-to-run calls for the steps and deliverable Claw's own tools can produce (the clawhunter-content-studio skill covers those). Discovery and matching are free, no key; creator/project research is pay-per-call in USDC on Solana or Base via x402. Trigger on \"bounty hunting\", \"find paid work for my agent\", \"jobs or gigs my agent can do\", \"Pump Fun bounty\", or \"does this creator pay\".",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-6d981dc4b2ac647e5a0c16b3a642bb97b828a2ed73a6ff3f684b9716edaabbd8",
+      "merkleLeaf": "sha256-5f9f1f7687a7019e8a0764db3c8fc3432d04be2f64d015bed6b115a719e69d9f",
+      "fileCount": 2,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/clawhunter-content-studio",
+      "name": "clawhunter-content-studio",
+      "description": "Give an agent a real voice, finished media, and factual research. Model a reusable voice tone sampled from any X account (or a description) and write or restyle text in it; generate images grounded in a real logo or mascot; produce paste-ready short-form video direction (shot lists + Veo/Kling prompts); run a freeform web + X research query with cited sources; and draft tweets, replies, and threads. Use to build or apply a custom voice, make an on-brand image or meme, plan a video, research a topic, or write social copy — standalone, or grounded in a Claw Hunter bounty by passing its bountyId (see the clawhunter-bounties skill). Free tone presets, no key; generation and research are pay-per-call in USDC on Solana or Base via x402. API at clawhunter.fun.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-97b02621ed6632cdef124d3db792e5140bb181bcb0aea63435b331f55d609e77",
+      "merkleLeaf": "sha256-767ddbf874d2d613b7b0f3c265e5975f9acfb99884bd589daff222d9f87cbd69",
+      "fileCount": 2,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/clawpump",
+      "name": "clawpump",
+      "description": "ClawPump on Solana — create/chat with agents, trade, perps, DCA, lend, launch tokens, marketplace, predictions, gift cards, agent email, intelligence via mcp_clawpump_* tools. Use when the user mentions ClawPump, launching a token, an agent's wallet/balance, swaps, perps, gift cards, agent email, or DeFi on Solana.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-c4043d835c403a24af6e85ff0c0826f93b05978f6263a45f80c55ddac8682927",
+      "merkleLeaf": "sha256-6afa728b256536a6cc3c6ac276da10150cbc5366b4b4ed2a1d9757012e69a8ff",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/clawpump/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/clawpump/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/dca-strategy",
+      "name": "dca-strategy",
+      "description": "Plan and execute dollar-cost averaging strategies on Solana tokens: set the token, total budget, frequency, duration, and source token, then run equal-amount interval buys with per-buy reporting and weekly summaries. Always confirms the strategy with the user before starting.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-c6f4338e25cd34f542b2f12269d9bdc3b7dd9ea2f967c59ce6c7956729015688",
+      "merkleLeaf": "sha256-2ad49557422cdb81728def8963953cbe661b4273596ccbc6993634d83857566a",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/dca-strategy/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/dca-strategy/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/dex-pools",
+      "name": "dex-pools",
+      "description": "Solana DEX liquidity, OHLCV candles, and venue discovery for any token/pool via GeckoTerminal (keyless). Use to sanity-check swap slippage, find the deepest venue, and read price history.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-99a58c5f9fc381dcdb3a170fadeceabf240f6ef25d75db09a5b32ae923838a07",
+      "merkleLeaf": "sha256-9f8ed8aeebc8e79fc08e07d3dd9f3d67270c632e2379037136130f02a9e591fc",
+      "fileCount": 3,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/dex-pools/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/dex-pools/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/laso-finance",
+      "name": "laso-finance",
+      "description": "Order and manage Laso Finance wallet cards, gift cards, and push-to-card payouts on Solana using the laso_* tools: check account state, search gift cards and merchants, quote the required USDC, and place paid orders only after explicit user approval.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-f9855af45b0b1dde8d99b75b3864710d2189751def349fdd5dbc72cb9cb4efed",
+      "merkleLeaf": "sha256-90b1d9b4183e609bf5842d9df9ef5ea558f2969f3d1d03e47db2d7a4dfe6abb2",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/laso-finance/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/laso-finance/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/meme-analyzer",
+      "name": "meme-analyzer",
+      "description": "Evaluate Solana meme tokens with a structured framework — liquidity depth, holder distribution, social sentiment, and rug-pull red flags — then score each token 0-100 with a risk level and a short verdict. Analysis only; never recommends buying a token.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-9211ba431de7175072ca350b58e8b2d811b3bb3b688c03e2ba314bdac1270c13",
+      "merkleLeaf": "sha256-cbb670a86fe8b4b077b64b3f7441a2e7820a48f42db9b92b0f96d3e09551f1f1",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/risk-manager",
+      "name": "risk-manager",
+      "description": "Pre-trade risk evaluation layer for Solana trading: check position sizing, concentration, drawdown, and liquidity and slippage limits before significant trades, and return a 1-10 risk score with a proceed, reduce size, review, or block recommendation. Advisory only — the user has final say.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-fb77adc30a79dfd1ba835a04b340938601950cb624f4c9b7e631c85947e41533",
+      "merkleLeaf": "sha256-b089993f3389ac5b01af64526750881203b105e369b8096ed4be5e0562a8c26d",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/risk-manager/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/risk-manager/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/rug-check",
+      "name": "rug-check",
+      "description": "Solana token safety diligence: mint/freeze authority, LP lock/burn, top-holder concentration, RugCheck score. Read-only — run before swapping into or launching alongside any token.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-5fb36f388637be94442eb9f816e0a800c79c25ae7bf69dceba9003599efa1bf8",
+      "merkleLeaf": "sha256-ad49432014506fa055dea61b09f77d6d66e6b7ac93e788109ec217306b67d4fe",
+      "fileCount": 3,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/rug-check/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/rug-check/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/straight-talk",
+      "name": "straight-talk",
+      "description": "Turn an agent's trades, launches, and holdings into honest, hype-free social posts as SOAG: no price promises or targets, losses admitted plainly, traps flagged in the post itself, and every claim traced to a real number, signed off in under 280 characters.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-2b34419173fa717846b9b19bdf18124393f315e4d1eed76b51042f9f0644ca65",
+      "merkleLeaf": "sha256-11e84f3468902f4105aa73e6261e8c3f3b3a76493b1f5b32fb998349deec6e3a",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/straight-talk/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/straight-talk/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/survivor-check",
+      "name": "survivor-check",
+      "description": "Survival-first check for Solana tokens before any buy: verify the token's age, that liquidity is still present, and that volume is two-sided, then assign a Bronze-to-Diamond survivor tier, score trap risk, and return a survivor, wait, or that's-the-trap verdict.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-e01d8d4d2ee7b69819afddd138838df212258c59d5a3fc71ce2f070d43bc573f",
+      "merkleLeaf": "sha256-3094f6b7ba8dd80ac12e2a7bbc6c8d32a2cb7fa5909cf02cc8d99533234b9cc0",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/survivor-check/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/survivor-check/verification.json"
+    },
+    {
+      "slug": "clawd-pump-agent-skills/skills/whale-tracker",
+      "name": "whale-tracker",
+      "description": "Monitor and interpret large Solana wallet movements: recent transactions over $10k, accumulation and exit patterns, new whale entries, and net flow direction, distinguishing real whale wallets from DEX aggregator, protocol, and exchange addresses.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-04062ca1ec036e4ede86b7ba993c5d6e4cf7321a514cd1e3b39dee8b32a45dfb",
+      "merkleLeaf": "sha256-ad3199ce99373effe9d1d910ca82f9c4cf46a447ed695a4cbad7936676397ec9",
+      "fileCount": 1,
+      "metadata": "/api/skills/clawd-pump-agent-skills/skills/whale-tracker/metadata.json",
+      "verification": "/api/skills/clawd-pump-agent-skills/skills/whale-tracker/verification.json"
     },
     {
       "slug": "clawd-skills-installer",
@@ -564,6 +707,17 @@
       "fileCount": 10,
       "metadata": "/api/skills/magicblock/metadata.json",
       "verification": "/api/skills/magicblock/verification.json"
+    },
+    {
+      "slug": "metaplex",
+      "name": "metaplex",
+      "description": "Official Metaplex Skill for Solana — a SKILL.md router with progressive-disclosure reference files giving AI coding agents accurate knowledge of Metaplex programs, CLI commands, and SDK patterns. Use when building with the Metaplex Agent Registry, Genesis token launches, Core NFTs and plugins, Token Metadata, Bubblegum compressed NFTs, or Core Candy Machine drops, via the mplx CLI, the Umi SDK, or (Token Metadata only) the Kit SDK (@solana/kit). Hub entry: install the official skill with `npx skills add metaplex` for the full reference files.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-2a7baea95a8212693ef052661f6b0e7f9c9f117e5c1dec0a1554d26d410a6f94",
+      "merkleLeaf": "sha256-51be40abda364a48f766f83bf953566d82e56d223237d13bc870b2022dbfe58b",
+      "fileCount": 1,
+      "metadata": "/api/skills/metaplex/metadata.json",
+      "verification": "/api/skills/metaplex/verification.json"
     },
     {
       "slug": "model-usage",
@@ -1085,11 +1239,11 @@
     {
       "slug": "solana-dev",
       "name": "solana-dev",
-      "description": "Use when user asks to \"build a Solana dapp\", \"write an Anchor program\", \"create a token\", \"debug Solana errors\", \"set up wallet connection\", \"test my Solana program\", \"deploy to devnet\", or \"explain Solana concepts\" (rent, accounts, PDAs, CPIs, etc.). Also use for quick on-chain lookups via public RPC + curl — \"what's the balance of <wallet>\", \"look up transaction <sig>\", \"token balance for <account>\", \"check this address on mainnet/devnet\". End-to-end Solana development playbook covering wallet connection, Anchor/Pinocchio programs, Codama client generation, LiteSVM/Mollusk/Surfpool testing, security checklists, and JSON-RPC curl lookups against public clusters. Integrates with the Solana MCP server for live documentation search. Prefers framework-kit (@solana/client + @solana/react-hooks) for UI, wallet-standard-first connection (incl. ConnectorKit), @solana/kit for client/RPC code, and @solana/web3-compat for legacy boundaries.",
+      "description": "Use when user asks to \"build a Solana dapp\", \"write an Anchor program\", \"create a token\", \"debug Solana errors\", \"set up wallet connection\", \"test my Solana program\", \"fuzz my Solana program\", \"deploy to devnet\", \"send a v1 transaction\", \"support larger transactions\", \"fix maxSupportedTransactionVersion\", or \"explain Solana concepts\" (rent, accounts, PDAs, CPIs). Also for program architecture (state layout, compute units, throughput, naming), quick on-chain lookups via public RPC + curl, gasless or sponsored-fee transactions (Kora), server-side signing with KMS/Turnkey/Privy/Fireblocks (Solana Keychain), and issuing stablecoins or allowlisted tokens (Mosaic). Covers wallets, Anchor/Pinocchio, Codama clients, Surfpool/LiteSVM/Mollusk testing, security review, and v1 transactions (SIMD-0385). Prefers @solana/kit 8 plugin clients building transaction v1 by default, @solana/kit-plugin-wallet + @solana/react for wallets, web3.js v3 as the legacy migration target, and Surfpool for local networks.",
       "category": "Solana / Blockchain",
-      "bundleHash": "sha256-cc6d05277bf9940d99caa6866cc5799d1774d9457265ea29930141e5edd8fc3c",
-      "merkleLeaf": "sha256-80bc1612fe2877d21f15c1b6698434931becc8760c50b5f208987f2db70de8a7",
-      "fileCount": 30,
+      "bundleHash": "sha256-d0bd3ac70d7d3996cdb1710194473f9556fceda9de638e3fedfe62b3b22aca6e",
+      "merkleLeaf": "sha256-492acd398d4b4b4bbaeb92cc338e3276955c15742d66e2772c0e491109119514",
+      "fileCount": 37,
       "metadata": "/api/skills/solana-dev/metadata.json",
       "verification": "/api/skills/solana-dev/verification.json"
     },
@@ -1103,6 +1257,182 @@
       "fileCount": 4,
       "metadata": "/api/skills/solana-formal-verification/metadata.json",
       "verification": "/api/skills/solana-formal-verification/verification.json"
+    },
+    {
+      "slug": "solana-foundation/common-errors",
+      "name": "solana-dev-common-errors",
+      "description": "Diagnose and fix common errors encountered when building on Solana, including GLIBC issues, Anchor version conflicts, and RPC errors.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-e9f73d48cd7cdaf82b1dad91d06b910fc145a21f32eb1c4bc6b30d29e4b76e85",
+      "merkleLeaf": "sha256-5acf0180b97cae8af22ab15cb21f32b7f4eecbcf842ec6bf429bb56febcec751",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/common-errors/metadata.json",
+      "verification": "/api/skills/solana-foundation/common-errors/verification.json"
+    },
+    {
+      "slug": "solana-foundation/compatibility-matrix",
+      "name": "solana-dev-compatibility-matrix",
+      "description": "Reference table for matching Anchor, Solana CLI, Rust, and Node.js versions to avoid toolchain conflicts.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-08cef64e99c9964f744c59a9e921b41fcfac0871f7e8141bc6da7b6aa1820439",
+      "merkleLeaf": "sha256-2a88115487ffa55e213b9a2c1b28fd80a73098c755c7291ad049f80afc5bca24",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/compatibility-matrix/metadata.json",
+      "verification": "/api/skills/solana-foundation/compatibility-matrix/verification.json"
+    },
+    {
+      "slug": "solana-foundation/concepts",
+      "name": "solana-dev-concepts",
+      "description": "How Solana's runtime actually works — rent as a deposit, Ed25519 keys and off-curve PDAs, entrypoint dispatch, on-chain cryptography, and the transaction wire format.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-cbad788f01f01925c646f5c59f81a2bbdfaf6a5b93db8cef3f9334f6a7c10d84",
+      "merkleLeaf": "sha256-ab7cd000cb872f417603e4befc0d8d4105b9513d14e5dabd72dad0daeb401545",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/concepts/metadata.json",
+      "verification": "/api/skills/solana-foundation/concepts/verification.json"
+    },
+    {
+      "slug": "solana-foundation/confidential-transfers",
+      "name": "solana-dev-confidential-transfers",
+      "description": "Implement private, encrypted token balances on Solana using the Token-2022 confidential transfers extension.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-5fc1e981395ed380daf970d8a6c041bae1741e3c7524274bed34b0aff88f9fc7",
+      "merkleLeaf": "sha256-dd46154ca5055ab6c9b5b5e4f0b27e6fceb0239dba985ce75d165f91fbcc57da",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/confidential-transfers/metadata.json",
+      "verification": "/api/skills/solana-foundation/confidential-transfers/verification.json"
+    },
+    {
+      "slug": "solana-foundation/frontend",
+      "name": "solana-dev-frontend",
+      "description": "Build React and Next.js Solana apps with a Kit plugin client, Wallet Standard connection via @solana/kit-plugin-wallet (+ its React hooks), and @solana/react client bindings.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-bd7c32dd2f5c27d4d83036ac170050697e1d82bab916da28e47831446e92ba56",
+      "merkleLeaf": "sha256-d95f7c5f28b378a8116e0004542f43c9606b9b514dc7d0b626516f0ec1b4c027",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/frontend/metadata.json",
+      "verification": "/api/skills/solana-foundation/frontend/verification.json"
+    },
+    {
+      "slug": "solana-foundation/idl-codegen",
+      "name": "solana-dev-idl-codegen",
+      "description": "Generate type-safe program clients from IDLs using Codama, eliminating hand-maintained serializers across languages.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-6e5f2b3e60af7d6eccf04201692963daa6019b9d9aa527e3b9f9f19592244756",
+      "merkleLeaf": "sha256-4acee1f13f21e4757697afecc5db8b460d6462ad41947c4ad60a9371fd5eaa3c",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/idl-codegen/metadata.json",
+      "verification": "/api/skills/solana-foundation/idl-codegen/verification.json"
+    },
+    {
+      "slug": "solana-foundation/keychain",
+      "name": "solana-dev-keychain",
+      "description": "Solana Keychain — one signing interface over KMS, Vault, MPC custody, and managed-wallet backends; Kit 8 plugin client setup, production rules, and links to the full docs.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-875d4a72e797019e04c30733a6cf6589a5e9796066644a623eefb0938d25f022",
+      "merkleLeaf": "sha256-49e00d59b019dd8dccc0c66e3f8112b7edb0641b5df26cf5fea418c6a0deefea",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/keychain/metadata.json",
+      "verification": "/api/skills/solana-foundation/keychain/verification.json"
+    },
+    {
+      "slug": "solana-foundation/kit-web3-interop",
+      "name": "solana-dev-kit-web3-interop",
+      "description": "How to handle legacy web3.js code — web3.js v3 (Kit internals, 3.0.0 since Oct 2026) is the migration target; defer migration mechanics to the official migration skill.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-de3fb5610c05721afe9f47f52d42bbd6e39da4873e0adc01ab696799c9811764",
+      "merkleLeaf": "sha256-e1d123ecdfea4d9ad3882d13f4f0ce0538184c0582207e2034e82131a27e0ba4",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/kit-web3-interop/metadata.json",
+      "verification": "/api/skills/solana-foundation/kit-web3-interop/verification.json"
+    },
+    {
+      "slug": "solana-foundation/kora",
+      "name": "solana-dev-kora",
+      "description": "Kora paymaster — when to use it, operator quick start, security controls, and links to the full docs.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-43af49b64048889554d847562087bfc0f8bef46704163f044516f4904f5823bd",
+      "merkleLeaf": "sha256-cab81331c9a0d1cae1046a44de502893d74ed0bad121691003728d4a4707f188",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/kora/metadata.json",
+      "verification": "/api/skills/solana-foundation/kora/verification.json"
+    },
+    {
+      "slug": "solana-foundation/mosaic",
+      "name": "solana-dev-mosaic",
+      "description": "Mosaic SDK — Token-2022 templates for stablecoins, tokenized securities, arcade tokens and money-market funds, sRFC-37 allowlist/blocklist compliance, Kit-version caveats, and when to hand-roll with @solana-program/token-2022 instead.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-fab16ae80e8a6363359a603f055309c9d0a7b5bd84aa11a3dea9d3480fd4b804",
+      "merkleLeaf": "sha256-36e3280bca9d160ec756fe5dd38b807f899f48e99495af401047c0d7ae8816b9",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/mosaic/metadata.json",
+      "verification": "/api/skills/solana-foundation/mosaic/verification.json"
+    },
+    {
+      "slug": "solana-foundation/payments",
+      "name": "solana-dev-payments",
+      "description": "Build checkout flows, payment buttons, and QR-based payment requests using Solana Pay conventions, Kit instruction builders, and Kora for gasless flows.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-9c2472c25fd4837e76a91968ca7256bb5e49f03394abb52eba83795957b011e6",
+      "merkleLeaf": "sha256-914750a505f12751f1f420a3338cac54ea99306e34ae1379efb32c146b71fe5f",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/payments/metadata.json",
+      "verification": "/api/skills/solana-foundation/payments/verification.json"
+    },
+    {
+      "slug": "solana-foundation/resources",
+      "name": "solana-dev-resources",
+      "description": "Authoritative Solana learning platforms, documentation, tooling references, and community resources.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-45aaba31019e84c01b59dfa0c57589e99473c4ab9799823297dd4fbb416b44dd",
+      "merkleLeaf": "sha256-76b36d9edc602f9ae0a762673d8a90b45a2c69d8691a36ab66806e99d15c94f4",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/resources/metadata.json",
+      "verification": "/api/skills/solana-foundation/resources/verification.json"
+    },
+    {
+      "slug": "solana-foundation/rpc-quick-lookups",
+      "name": "solana-dev-rpc-quick-lookups",
+      "description": "Quick on-chain lookups via public RPC + curl — wallet balance, a specific transaction, a token account balance, account info. No SDK install, no project setup.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-aba001002efcd5645d5654635ad2242fd29d27af214af9047c96100b5109b61e",
+      "merkleLeaf": "sha256-f7956299ad2a0ec579c2baeeb92006973ff836937fc5df50914c5337a3da9f3e",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/rpc-quick-lookups/metadata.json",
+      "verification": "/api/skills/solana-foundation/rpc-quick-lookups/verification.json"
+    },
+    {
+      "slug": "solana-foundation/security",
+      "name": "solana-dev-security",
+      "description": "Program and client security checklist covering account validation, signer checks, and common attack vectors to review before deploying.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-4b044d1f1cefb9a417203c84fa02078fb38cb1a229b2fdcbbbdb5ba9ceda9958",
+      "merkleLeaf": "sha256-e2aef51c534f5745b51fc5fc0f1c8df2a28b5c788838354d8487b3f870c5f322",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/security/metadata.json",
+      "verification": "/api/skills/solana-foundation/security/verification.json"
+    },
+    {
+      "slug": "solana-foundation/testing",
+      "name": "solana-dev-testing",
+      "description": "A testing pyramid for Solana programs using LiteSVM and Mollusk for fast unit tests and Surfpool (CLI or embedded SDK) as the integration-testing centerpiece, with mainnet forking, cheatcodes, and CI patterns.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-7a02932168a4b2a2f51784fad2a76bbea268deaa6b9975a804a23659ac7185ff",
+      "merkleLeaf": "sha256-8d8df8a3c2d6272d5599cc03318bc4e6613b394fd9e421ff97c0e91bee9f68fc",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/testing/metadata.json",
+      "verification": "/api/skills/solana-foundation/testing/verification.json"
+    },
+    {
+      "slug": "solana-foundation/transactions-v1",
+      "name": "solana-dev-transactions-v1",
+      "description": "The v1 transaction format that raises the size limit to 4096 bytes — the default for new code. Send it through @solana/kit plugin clients (transactionConfig version 1), read and index it without breaking, and fall back to manual pipe() or the Rust 4.x crates when needed.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-db1c338dfe942c137482d089070f1ea5f5725ebaff1c009dd7c7b04c93c740eb",
+      "merkleLeaf": "sha256-942718426db6eb3f60cb419047456da70b1c1f8f7ed915f632f32bc3b69302ad",
+      "fileCount": 1,
+      "metadata": "/api/skills/solana-foundation/transactions-v1/metadata.json",
+      "verification": "/api/skills/solana-foundation/transactions-v1/verification.json"
     },
     {
       "slug": "solana-ralphy-skill",
@@ -1411,17 +1741,6 @@
       "fileCount": 1,
       "metadata": "/api/skills/zk-omni-messaging/metadata.json",
       "verification": "/api/skills/zk-omni-messaging/verification.json"
-    },
-    {
-      "slug": "zkrouter",
-      "name": "zkrouter",
-      "description": "Self-hosted OpenAI-compatible LLM router — smart tier-based routing, ZK-stamped routing decisions, mode overrides, free OpenRouter at install via the Birth bot. Save 60-80% on inference costs by routing to the cheapest capable model across 12+ OpenRouter models.",
-      "category": "Solana / Blockchain",
-      "bundleHash": "sha256-672fad7d89c88e70a2f6d5f53b50c64b545848f90578acc454168763983558ca",
-      "merkleLeaf": "sha256-ae9c9e03639045d3f1ab688b47a1c589db24d261c9e41f526c31102d195f9a5c",
-      "fileCount": 1,
-      "metadata": "/api/skills/zkrouter/metadata.json",
-      "verification": "/api/skills/zkrouter/verification.json"
     },
     {
       "slug": "agent-desktop",

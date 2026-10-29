@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/resources",
+  "name": "solana-dev-resources",
+  "description": "Authoritative Solana learning platforms, documentation, tooling references, and community resources.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/resources/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/resources/metadata.json",
+  "bundleHash": "sha256-45aaba31019e84c01b59dfa0c57589e99473c4ab9799823297dd4fbb416b44dd",
+  "merkleLeaf": "sha256-76b36d9edc602f9ae0a762673d8a90b45a2c69d8691a36ab66806e99d15c94f4",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 7756,
+      "sha256": "sha256-8c3da83600b3b19c4acf524c53856605ecc04a8dd748deb7c7c541da3ff8d3c6"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

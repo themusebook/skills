@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/survivor-check",
+  "name": "survivor-check",
+  "description": "Survival-first check for Solana tokens before any buy: verify the token's age, that liquidity is still present, and that volume is two-sided, then assign a Bronze-to-Diamond survivor tier, score trap risk, and return a survivor, wait, or that's-the-trap verdict.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/survivor-check/SKILL.md"
+}

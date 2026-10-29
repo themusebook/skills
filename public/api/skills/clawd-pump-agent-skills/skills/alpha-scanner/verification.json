@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/alpha-scanner",
+  "name": "alpha-scanner",
+  "description": "Scan Solana for early trading opportunities — new pump.fun and Raydium launches, unusual volume spikes, social catalysts, and smart-money entries — and present them as structured alpha reports with risk factors and a confidence level. Research only, never framed as buy recommendations.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/metadata.json",
+  "bundleHash": "sha256-e33227403811bb203bc4657eaac0b0fb23c56cb6d9af86c902151abaadcdd724",
+  "merkleLeaf": "sha256-f59f23ae098d164abcbc1b12cd9b33f233ca407fdf72571377fe387c35875a65",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2097,
+      "sha256": "sha256-3f8bb4fbf02c220d91123aeb75f7049d6cabcbe48aad62775671114e8add5559"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

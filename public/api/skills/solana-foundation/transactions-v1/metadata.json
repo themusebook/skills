@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/transactions-v1",
+  "name": "solana-dev-transactions-v1",
+  "description": "The v1 transaction format that raises the size limit to 4096 bytes — the default for new code. Send it through @solana/kit plugin clients (transactionConfig version 1), read and index it without breaking, and fall back to manual pipe() or the Rust 4.x crates when needed.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/transactions-v1/SKILL.md"
+}

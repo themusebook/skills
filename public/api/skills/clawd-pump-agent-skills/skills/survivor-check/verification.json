@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/survivor-check",
+  "name": "survivor-check",
+  "description": "Survival-first check for Solana tokens before any buy: verify the token's age, that liquidity is still present, and that volume is two-sided, then assign a Bronze-to-Diamond survivor tier, score trap risk, and return a survivor, wait, or that's-the-trap verdict.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/survivor-check/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/survivor-check/metadata.json",
+  "bundleHash": "sha256-e01d8d4d2ee7b69819afddd138838df212258c59d5a3fc71ce2f070d43bc573f",
+  "merkleLeaf": "sha256-3094f6b7ba8dd80ac12e2a7bbc6c8d32a2cb7fa5909cf02cc8d99533234b9cc0",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 3342,
+      "sha256": "sha256-716beb7c940c2fc65cb2e7d5dd08527ace99ab451718ce09c558b6a2bf9a2963"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

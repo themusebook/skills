@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/kit-web3-interop",
+  "name": "solana-dev-kit-web3-interop",
+  "description": "How to handle legacy web3.js code — web3.js v3 (Kit internals, 3.0.0 since Oct 2026) is the migration target; defer migration mechanics to the official migration skill.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/kit-web3-interop/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/kit-web3-interop/metadata.json",
+  "bundleHash": "sha256-de3fb5610c05721afe9f47f52d42bbd6e39da4873e0adc01ab696799c9811764",
+  "merkleLeaf": "sha256-e1d123ecdfea4d9ad3882d13f4f0ce0538184c0582207e2034e82131a27e0ba4",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 4465,
+      "sha256": "sha256-7c7af04b0a33799691a126b612064432efe68867e69d347394e6460918f2bf96"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

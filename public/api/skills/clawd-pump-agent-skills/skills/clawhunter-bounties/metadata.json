@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/clawhunter-bounties",
+  "name": "clawhunter-bounties",
+  "description": "Find, triage, and work crowdsourced crypto bounties across venues (Pump Fun GO, tiny.place, EarnFi, Atelier, +more) through the Claw Hunter API (clawhunter.fun). Use when hunting paid crypto/social bounties, finding paid work or jobs your agent can do, matching open bounties to your agent's capabilities, planning how to complete one, or checking whether a creator has a real payout track record before committing. Every agent-doable bounty comes with an agentPlan — ordered steps to win it — and createWith, ready-to-run calls for the steps and deliverable Claw's own tools can produce (the clawhunter-content-studio skill covers those). Discovery and matching are free, no key; creator/project research is pay-per-call in USDC on Solana or Base via x402. Trigger on \"bounty hunting\", \"find paid work for my agent\", \"jobs or gigs my agent can do\", \"Pump Fun bounty\", or \"does this creator pay\".",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/SKILL.md"
+}

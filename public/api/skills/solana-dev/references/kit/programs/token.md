@@ -140,40 +140,40 @@ const ix = getBurnInstruction({
 
 ## Instruction Plans
 
-Handle multi-step operations (e.g., create ATA if needed). Auto-check preconditions and only include necessary instructions — use for user-facing flows.
+Handle multi-step operations (e.g., create ATA if needed). Auto-check preconditions and only include necessary instructions — use for user-facing flows. Build a plan with the `get*InstructionPlan` builders, then execute it through a plugin client that has planning + sending capability via `client.sendTransaction(plan)` (see [plugins.md](../plugins.md)). For a shorter form, `client.use(tokenProgram())` exposes `client.token.instructions.createMint(...)` / `client.token.instructions.mintToATA(...)`; call `.sendTransaction()` on the returned plan to submit (e.g. `await client.token.instructions.createMint({ newMint, decimals, mintAuthority }).sendTransaction()`).
 
 ### Create Mint
 
 ```ts
 import { getCreateMintInstructionPlan } from '@solana-program/token';
-import { executeInstructionPlan } from '@solana/instruction-plans';
 
 const plan = getCreateMintInstructionPlan({
-  mint: mintKeypair,
+  payer,
+  newMint: mintKeypair,
   decimals: 9,
   mintAuthority: authority.address,
-  payer,
-  rpc,
 });
 
-await executeInstructionPlan(rpc, plan, { payer });
+await client.sendTransaction(plan);
 ```
 
 ### Mint to ATA (Creates ATA if needed)
 
-```ts
-import { getMintToATAInstructionPlan } from '@solana-program/token';
+Use the async builder — it derives the ATA automatically.
 
-const plan = getMintToATAInstructionPlan({
+```ts
+import { getMintToATAInstructionPlanAsync } from '@solana-program/token';
+
+const plan = await getMintToATAInstructionPlanAsync({
+  payer,
+  owner: recipientAddress,
   mint: mintAddress,
   mintAuthority: authority,
-  owner: recipientAddress,
   amount: 1_000_000_000n,
-  payer,
-  rpc,
+  decimals: 9,
 });
 
-await executeInstructionPlan(rpc, plan, { payer });
+await client.sendTransaction(plan);
 ```
 
 ## Complete Pattern: Create Token + Mint
@@ -182,6 +182,8 @@ await executeInstructionPlan(rpc, plan, { payer });
 import {
   pipe, createTransactionMessage, setTransactionMessageFeePayerSigner,
   setTransactionMessageLifetimeUsingBlockhash, appendTransactionMessageInstructions,
+  fillTransactionMessageProvisoryResourceLimits,
+  estimateResourceLimitsFactory, estimateAndSetResourceLimitsFactory,
   signTransactionMessageWithSigners, sendAndConfirmTransactionFactory,
   assertIsTransactionWithBlockhashLifetime, generateKeyPairSigner, lamports,
 } from '@solana/kit';
@@ -207,8 +209,8 @@ const [ata] = await findAssociatedTokenPda({
 
 const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
 
-const message = pipe(
-  createTransactionMessage({ version: 0 }),
+const draft = pipe(
+  createTransactionMessage({ version: 1 }),
   m => setTransactionMessageFeePayerSigner(payer, m),
   m => setTransactionMessageLifetimeUsingBlockhash(latestBlockhash, m),
   m => appendTransactionMessageInstructions([
@@ -241,7 +243,12 @@ const message = pipe(
       amount: 1_000_000_000n,
     }),
   ], m),
+  fillTransactionMessageProvisoryResourceLimits,
 );
+
+const message = await estimateAndSetResourceLimitsFactory(
+  estimateResourceLimitsFactory({ rpc }),
+)(draft);
 
 const sendAndConfirm = sendAndConfirmTransactionFactory({ rpc, rpcSubscriptions });
 const signed = await signTransactionMessageWithSigners(message);

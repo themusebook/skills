@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/testing",
+  "name": "solana-dev-testing",
+  "description": "A testing pyramid for Solana programs using LiteSVM and Mollusk for fast unit tests and Surfpool (CLI or embedded SDK) as the integration-testing centerpiece, with mainnet forking, cheatcodes, and CI patterns.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/testing/SKILL.md"
+}

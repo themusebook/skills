@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/straight-talk",
+  "name": "straight-talk",
+  "description": "Turn an agent's trades, launches, and holdings into honest, hype-free social posts as SOAG: no price promises or targets, losses admitted plainly, traps flagged in the post itself, and every claim traced to a real number, signed off in under 280 characters.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/straight-talk/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/straight-talk/metadata.json",
+  "bundleHash": "sha256-2b34419173fa717846b9b19bdf18124393f315e4d1eed76b51042f9f0644ca65",
+  "merkleLeaf": "sha256-11e84f3468902f4105aa73e6261e8c3f3b3a76493b1f5b32fb998349deec6e3a",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 4028,
+      "sha256": "sha256-03ee7a7fad6c3bb0e642ca657ee591a3aedbb05065c50d876c1f6cc18e851756"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "slug": "metaplex",
+  "name": "metaplex",
+  "description": "Official Metaplex Skill for Solana — a SKILL.md router with progressive-disclosure reference files giving AI coding agents accurate knowledge of Metaplex programs, CLI commands, and SDK patterns. Use when building with the Metaplex Agent Registry, Genesis token launches, Core NFTs and plugins, Token Metadata, Bubblegum compressed NFTs, or Core Candy Machine drops, via the mplx CLI, the Umi SDK, or (Token Metadata only) the Kit SDK (@solana/kit). Hub entry: install the official skill with `npx skills add metaplex` for the full reference files.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/metaplex/SKILL.md"
+}

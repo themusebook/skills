@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/meme-analyzer",
+  "name": "meme-analyzer",
+  "description": "Evaluate Solana meme tokens with a structured framework — liquidity depth, holder distribution, social sentiment, and rug-pull red flags — then score each token 0-100 with a risk level and a short verdict. Analysis only; never recommends buying a token.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/SKILL.md"
+}

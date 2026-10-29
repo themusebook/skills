@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/mosaic",
+  "name": "solana-dev-mosaic",
+  "description": "Mosaic SDK — Token-2022 templates for stablecoins, tokenized securities, arcade tokens and money-market funds, sRFC-37 allowlist/blocklist compliance, Kit-version caveats, and when to hand-roll with @solana-program/token-2022 instead.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/mosaic/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/mosaic/metadata.json",
+  "bundleHash": "sha256-fab16ae80e8a6363359a603f055309c9d0a7b5bd84aa11a3dea9d3480fd4b804",
+  "merkleLeaf": "sha256-36e3280bca9d160ec756fe5dd38b807f899f48e99495af401047c0d7ae8816b9",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 6653,
+      "sha256": "sha256-a41a561c7ceaa2b660dc5734f831336d9762064aa6fc1c52baab7f11e4c52735"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

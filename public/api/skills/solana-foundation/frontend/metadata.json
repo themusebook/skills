@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/frontend",
+  "name": "solana-dev-frontend",
+  "description": "Build React and Next.js Solana apps with a Kit plugin client, Wallet Standard connection via @solana/kit-plugin-wallet (+ its React hooks), and @solana/react client bindings.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/frontend/SKILL.md"
+}

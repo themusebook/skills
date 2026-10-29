@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/whale-tracker",
+  "name": "whale-tracker",
+  "description": "Monitor and interpret large Solana wallet movements: recent transactions over $10k, accumulation and exit patterns, new whale entries, and net flow direction, distinguishing real whale wallets from DEX aggregator, protocol, and exchange addresses.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/whale-tracker/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/whale-tracker/metadata.json",
+  "bundleHash": "sha256-04062ca1ec036e4ede86b7ba993c5d6e4cf7321a514cd1e3b39dee8b32a45dfb",
+  "merkleLeaf": "sha256-ad3199ce99373effe9d1d910ca82f9c4cf46a447ed695a4cbad7936676397ec9",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 1814,
+      "sha256": "sha256-46dfecd424da2eb7b23b1de29d9186e3501b8563b152dfbd19b2cb05fdfad165"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

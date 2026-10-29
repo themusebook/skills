@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/idl-codegen",
+  "name": "solana-dev-idl-codegen",
+  "description": "Generate type-safe program clients from IDLs using Codama, eliminating hand-maintained serializers across languages.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/idl-codegen/SKILL.md"
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/common-errors",
+  "name": "solana-dev-common-errors",
+  "description": "Diagnose and fix common errors encountered when building on Solana, including GLIBC issues, Anchor version conflicts, and RPC errors.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/common-errors/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/common-errors/metadata.json",
+  "bundleHash": "sha256-e9f73d48cd7cdaf82b1dad91d06b910fc145a21f32eb1c4bc6b30d29e4b76e85",
+  "merkleLeaf": "sha256-5acf0180b97cae8af22ab15cb21f32b7f4eecbcf842ec6bf429bb56febcec751",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 25995,
+      "sha256": "sha256-3a02199c690aa4a4c43ff44ce74c21450d76284a1a96d53e77dfe67d6d6013b3"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

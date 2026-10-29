@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/risk-manager",
+  "name": "risk-manager",
+  "description": "Pre-trade risk evaluation layer for Solana trading: check position sizing, concentration, drawdown, and liquidity and slippage limits before significant trades, and return a 1-10 risk score with a proceed, reduce size, review, or block recommendation. Advisory only — the user has final say.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/risk-manager/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/risk-manager/metadata.json",
+  "bundleHash": "sha256-fb77adc30a79dfd1ba835a04b340938601950cb624f4c9b7e631c85947e41533",
+  "merkleLeaf": "sha256-b089993f3389ac5b01af64526750881203b105e369b8096ed4be5e0562a8c26d",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2483,
+      "sha256": "sha256-1e689f1ffb85e35f035f44fae16e1a2c73e2ceef8b1a7f6e0d09fe0e5734b077"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

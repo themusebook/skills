@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/dex-pools",
+  "name": "dex-pools",
+  "description": "Solana DEX liquidity, OHLCV candles, and venue discovery for any token/pool via GeckoTerminal (keyless). Use to sanity-check swap slippage, find the deepest venue, and read price history.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/dex-pools/SKILL.md"
+}

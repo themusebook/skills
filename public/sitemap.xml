@@ -34,6 +34,45 @@
   <url><loc>https://skills.x402agent.io/api/skills/clawd-agent-launchpad/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/clawd-agent-launchpad/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/clawd-agent-launchpad/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/alpha-scanner/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawpump/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawpump/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawpump/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dca-strategy/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dca-strategy/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dca-strategy/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dex-pools/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dex-pools/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dex-pools/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/laso-finance/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/laso-finance/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/laso-finance/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/risk-manager/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/risk-manager/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/risk-manager/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/rug-check/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/rug-check/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/rug-check/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/straight-talk/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/straight-talk/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/straight-talk/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/survivor-check/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/survivor-check/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/survivor-check/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/whale-tracker/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/whale-tracker/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/whale-tracker/SKILL.md</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/clawd-skills-installer/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/clawd-skills-installer/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/clawd-skills-installer/SKILL.md</loc></url>
@@ -154,6 +193,9 @@
   <url><loc>https://skills.x402agent.io/api/skills/magicblock/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/magicblock/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/magicblock/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/metaplex/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/metaplex/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/metaplex/SKILL.md</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/model-usage/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/model-usage/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/model-usage/SKILL.md</loc></url>
@@ -301,6 +343,54 @@
   <url><loc>https://skills.x402agent.io/api/skills/solana-formal-verification/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/solana-formal-verification/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/solana-formal-verification/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/common-errors/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/common-errors/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/common-errors/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/compatibility-matrix/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/compatibility-matrix/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/compatibility-matrix/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/concepts/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/concepts/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/concepts/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/confidential-transfers/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/confidential-transfers/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/confidential-transfers/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/frontend/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/frontend/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/frontend/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/idl-codegen/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/idl-codegen/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/idl-codegen/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/keychain/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/keychain/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/keychain/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/kit-web3-interop/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/kit-web3-interop/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/kit-web3-interop/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/kora/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/kora/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/kora/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/mosaic/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/mosaic/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/mosaic/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/payments/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/payments/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/payments/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/resources/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/resources/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/resources/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/rpc-quick-lookups/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/rpc-quick-lookups/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/rpc-quick-lookups/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/security/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/security/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/security/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/testing/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/testing/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/testing/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/transactions-v1/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/transactions-v1/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/solana-foundation/transactions-v1/SKILL.md</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/solana-ralphy-skill/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/solana-ralphy-skill/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/solana-ralphy-skill/SKILL.md</loc></url>
@@ -385,9 +475,6 @@
   <url><loc>https://skills.x402agent.io/api/skills/zk-omni-messaging/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/zk-omni-messaging/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/zk-omni-messaging/SKILL.md</loc></url>
-  <url><loc>https://skills.x402agent.io/api/skills/zkrouter/metadata.json</loc></url>
-  <url><loc>https://skills.x402agent.io/api/skills/zkrouter/verification.json</loc></url>
-  <url><loc>https://skills.x402agent.io/api/skills/zkrouter/SKILL.md</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/agent-desktop/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/agent-desktop/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/agent-desktop/SKILL.md</loc></url>

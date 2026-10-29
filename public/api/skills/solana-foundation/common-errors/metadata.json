@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/common-errors",
+  "name": "solana-dev-common-errors",
+  "description": "Diagnose and fix common errors encountered when building on Solana, including GLIBC issues, Anchor version conflicts, and RPC errors.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/common-errors/SKILL.md"
+}

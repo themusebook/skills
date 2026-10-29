@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/laso-finance",
+  "name": "laso-finance",
+  "description": "Order and manage Laso Finance wallet cards, gift cards, and push-to-card payouts on Solana using the laso_* tools: check account state, search gift cards and merchants, quote the required USDC, and place paid orders only after explicit user approval.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/laso-finance/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/laso-finance/metadata.json",
+  "bundleHash": "sha256-f9855af45b0b1dde8d99b75b3864710d2189751def349fdd5dbc72cb9cb4efed",
+  "merkleLeaf": "sha256-90b1d9b4183e609bf5842d9df9ef5ea558f2969f3d1d03e47db2d7a4dfe6abb2",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2889,
+      "sha256": "sha256-7d53ab69a8cfcfd3877fe26ad7902a106004e44d9c10e25a938debb197c5f2b3"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

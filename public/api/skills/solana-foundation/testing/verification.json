@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/testing",
+  "name": "solana-dev-testing",
+  "description": "A testing pyramid for Solana programs using LiteSVM and Mollusk for fast unit tests and Surfpool (CLI or embedded SDK) as the integration-testing centerpiece, with mainnet forking, cheatcodes, and CI patterns.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/testing/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/testing/metadata.json",
+  "bundleHash": "sha256-7a02932168a4b2a2f51784fad2a76bbea268deaa6b9975a804a23659ac7185ff",
+  "merkleLeaf": "sha256-8d8df8a3c2d6272d5599cc03318bc4e6613b394fd9e421ff97c0e91bee9f68fc",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 22063,
+      "sha256": "sha256-f1a9ba0174e7a90e6df8a628db065e041449df368928664d797c561ca8317d71"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

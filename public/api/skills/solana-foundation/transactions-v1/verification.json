@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/transactions-v1",
+  "name": "solana-dev-transactions-v1",
+  "description": "The v1 transaction format that raises the size limit to 4096 bytes — the default for new code. Send it through @solana/kit plugin clients (transactionConfig version 1), read and index it without breaking, and fall back to manual pipe() or the Rust 4.x crates when needed.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/transactions-v1/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/transactions-v1/metadata.json",
+  "bundleHash": "sha256-db1c338dfe942c137482d089070f1ea5f5725ebaff1c009dd7c7b04c93c740eb",
+  "merkleLeaf": "sha256-942718426db6eb3f60cb419047456da70b1c1f8f7ed915f632f32bc3b69302ad",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 32609,
+      "sha256": "sha256-a6ca3187833535bb6d5a6891519ff3e02b2c58fb81fb184924b995f93978057e"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

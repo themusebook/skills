@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/clawhunter-bounties",
+  "name": "clawhunter-bounties",
+  "description": "Find, triage, and work crowdsourced crypto bounties across venues (Pump Fun GO, tiny.place, EarnFi, Atelier, +more) through the Claw Hunter API (clawhunter.fun). Use when hunting paid crypto/social bounties, finding paid work or jobs your agent can do, matching open bounties to your agent's capabilities, planning how to complete one, or checking whether a creator has a real payout track record before committing. Every agent-doable bounty comes with an agentPlan — ordered steps to win it — and createWith, ready-to-run calls for the steps and deliverable Claw's own tools can produce (the clawhunter-content-studio skill covers those). Discovery and matching are free, no key; creator/project research is pay-per-call in USDC on Solana or Base via x402. Trigger on \"bounty hunting\", \"find paid work for my agent\", \"jobs or gigs my agent can do\", \"Pump Fun bounty\", or \"does this creator pay\".",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/clawhunter-bounties/metadata.json",
+  "bundleHash": "sha256-6d981dc4b2ac647e5a0c16b3a642bb97b828a2ed73a6ff3f684b9716edaabbd8",
+  "merkleLeaf": "sha256-5f9f1f7687a7019e8a0764db3c8fc3432d04be2f64d015bed6b115a719e69d9f",
+  "files": [
+    {
+      "path": "references/research.md",
+      "bytes": 5736,
+      "sha256": "sha256-aae90b4c68f73a8f378209770599b5f9077e9679a2044d990bc4b417453f8953"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 9112,
+      "sha256": "sha256-640ca154eb574f0f9d44c7c45e229568154afabd9fc99b5b9a65796dbfc92324"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

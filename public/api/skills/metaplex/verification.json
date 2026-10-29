@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "metaplex",
+  "name": "metaplex",
+  "description": "Official Metaplex Skill for Solana — a SKILL.md router with progressive-disclosure reference files giving AI coding agents accurate knowledge of Metaplex programs, CLI commands, and SDK patterns. Use when building with the Metaplex Agent Registry, Genesis token launches, Core NFTs and plugins, Token Metadata, Bubblegum compressed NFTs, or Core Candy Machine drops, via the mplx CLI, the Umi SDK, or (Token Metadata only) the Kit SDK (@solana/kit). Hub entry: install the official skill with `npx skills add metaplex` for the full reference files.",
+  "source": "https://skills.x402agent.io/api/skills/metaplex/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/metaplex/metadata.json",
+  "bundleHash": "sha256-2a7baea95a8212693ef052661f6b0e7f9c9f117e5c1dec0a1554d26d410a6f94",
+  "merkleLeaf": "sha256-51be40abda364a48f766f83bf953566d82e56d223237d13bc870b2022dbfe58b",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 3132,
+      "sha256": "sha256-058faa555dda445edd40de3efe548305cf2695aeedf66d28992e6c10779fb276"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

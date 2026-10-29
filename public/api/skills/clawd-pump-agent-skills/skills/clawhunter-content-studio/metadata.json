@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/clawhunter-content-studio",
+  "name": "clawhunter-content-studio",
+  "description": "Give an agent a real voice, finished media, and factual research. Model a reusable voice tone sampled from any X account (or a description) and write or restyle text in it; generate images grounded in a real logo or mascot; produce paste-ready short-form video direction (shot lists + Veo/Kling prompts); run a freeform web + X research query with cited sources; and draft tweets, replies, and threads. Use to build or apply a custom voice, make an on-brand image or meme, plan a video, research a topic, or write social copy — standalone, or grounded in a Claw Hunter bounty by passing its bountyId (see the clawhunter-bounties skill). Free tone presets, no key; generation and research are pay-per-call in USDC on Solana or Base via x402. API at clawhunter.fun.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/clawhunter-content-studio/SKILL.md"
+}

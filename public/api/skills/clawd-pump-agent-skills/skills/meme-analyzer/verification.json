@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/meme-analyzer",
+  "name": "meme-analyzer",
+  "description": "Evaluate Solana meme tokens with a structured framework — liquidity depth, holder distribution, social sentiment, and rug-pull red flags — then score each token 0-100 with a risk level and a short verdict. Analysis only; never recommends buying a token.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/meme-analyzer/metadata.json",
+  "bundleHash": "sha256-9211ba431de7175072ca350b58e8b2d811b3bb3b688c03e2ba314bdac1270c13",
+  "merkleLeaf": "sha256-cbb670a86fe8b4b077b64b3f7441a2e7820a48f42db9b92b0f96d3e09551f1f1",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 1925,
+      "sha256": "sha256-6b77e761154ca3789f20a4a45d7fecba397889252a87e18b31f8fde16b4b93f9"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

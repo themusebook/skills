@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/rug-check",
+  "name": "rug-check",
+  "description": "Solana token safety diligence: mint/freeze authority, LP lock/burn, top-holder concentration, RugCheck score. Read-only — run before swapping into or launching alongside any token.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/rug-check/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/rug-check/metadata.json",
+  "bundleHash": "sha256-5fb36f388637be94442eb9f816e0a800c79c25ae7bf69dceba9003599efa1bf8",
+  "merkleLeaf": "sha256-ad49432014506fa055dea61b09f77d6d66e6b7ac93e788109ec217306b67d4fe",
+  "files": [
+    {
+      "path": "references/api-endpoints.md",
+      "bytes": 2307,
+      "sha256": "sha256-d7f707f17c185ec1179a5c91570947055e60fac6fa700463e0d2b76c5f676742"
+    },
+    {
+      "path": "scripts/rugcheck.py",
+      "bytes": 10190,
+      "sha256": "sha256-55b9284781b1cce3f900cbef1796d761a348ce4e51e29cee534b065d8ce379e6"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 4836,
+      "sha256": "sha256-065fd8c1b75140a66544ebfc0bddf8d290f2196b110be21997bdfc88222cbcf7"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

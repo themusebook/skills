@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/rpc-quick-lookups",
+  "name": "solana-dev-rpc-quick-lookups",
+  "description": "Quick on-chain lookups via public RPC + curl — wallet balance, a specific transaction, a token account balance, account info. No SDK install, no project setup.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/rpc-quick-lookups/SKILL.md"
+}

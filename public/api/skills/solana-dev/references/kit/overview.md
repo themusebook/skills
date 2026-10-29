@@ -7,6 +7,18 @@ description: Quick-start guide for @solana/kit using createClient + .use() plugi
 
 `@solana/kit` is the JavaScript SDK for building Solana applications. Modular, tree-shakable, full TypeScript support. Clients are built by composing plugins onto `createClient()` via `.use()`.
 
+## Contents
+
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Client API](#client-api)
+- [Core Concepts](#core-concepts)
+- [Common Patterns](#common-patterns)
+- [Codama Program Clients](#codama-program-clients)
+- [Package Overview](#package-overview)
+- [Best Practices](#best-practices)
+- [Reference Files](#reference-files)
+
 ## Installation
 
 ```bash
@@ -14,9 +26,9 @@ npm install @solana/kit @solana/kit-plugin-rpc @solana/kit-plugin-signer
 # or: pnpm add @solana/kit @solana/kit-plugin-rpc @solana/kit-plugin-signer
 ```
 
-For LiteSVM testing add `@solana/kit-plugin-litesvm`. For Codama-generated program clients add the relevant `@solana-program/*` package(s).
+For LiteSVM testing add `@solana/kit-plugin-litesvm`. For browser wallet connection add `@solana/kit-plugin-wallet`. For Codama-generated program clients add the relevant `@solana-program/*` package(s).
 
-Minimum version: Solana Kit v6.8.0.
+Minimum versions for new code: `@solana/kit` 8.3+, `@solana/kit-plugin-rpc` / `-signer` / `-litesvm` 0.19+, `@solana/kit-plugin-wallet` 0.20+, `@solana/react` 8+. These are the first releases where plugin clients build transaction v1 (`transactionConfig: { version: 1 }`) and wallets report v1 support — see [transactions-v1.md](../transactions-v1.md). Kit 7 with 0.13+ plugins still works for legacy/v0-only code.
 
 ## Quick Start
 
@@ -34,7 +46,7 @@ import { signerFromFile } from '@solana/kit-plugin-signer';
 //   - `payer(...)` + `identity(...)`        // when fees and authority come from different keypairs
 const client = await createClient()
   .use(signerFromFile('~/.config/solana/id.json'))
-  .use(solanaLocalRpc());
+  .use(solanaLocalRpc({ transactionConfig: { version: 1 } })); // v1: 4096-byte transactions, budget in message.config
 
 console.log('Payer:', client.payer.address);
 await client.sendTransaction([myInstruction]);
@@ -43,16 +55,20 @@ await client.sendTransaction([myInstruction]);
 ### Production (Mainnet/Devnet)
 
 ```ts
-import { createClient } from '@solana/kit';
+import { createClient, lamports } from '@solana/kit';
 import { solanaDevnetRpc, solanaMainnetRpc } from '@solana/kit-plugin-rpc';
 import { signer } from '@solana/kit-plugin-signer';
 
+const transactionConfig = { version: 1, priorityFeeLamports: lamports(5_000n) } as const;
+
 const client = createClient()
   .use(signer(mySigner)) // sets payer + identity; use payer(...) + identity(...) if they differ
-  .use(solanaDevnetRpc()); // or solanaMainnetRpc({ rpcUrl: 'https://...' })
+  .use(solanaDevnetRpc({ transactionConfig })); // or solanaMainnetRpc({ rpcUrl: 'https://...', transactionConfig })
 
 await client.sendTransaction([myInstruction]);
 ```
+
+`transactionConfig.version` defaults to `0` when omitted — always pass `version: 1` for new code. On v1 the priority fee is `priorityFeeLamports` (a total); legacy/v0 use `microLamportsPerComputeUnit` (a per-CU price). The client reserves the compute unit and loaded-accounts-data-size limits and fills them by simulation before sending.
 
 `solanaDevnetRpc()` defaults to `https://api.devnet.solana.com` and bundles airdrop. `solanaMainnetRpc({ rpcUrl })` is type-narrowed to a mainnet URL — no devnet-only methods like `airdrop`.
 
@@ -65,12 +81,14 @@ import { airdropSigner, generatedSigner } from '@solana/kit-plugin-signer';
 
 const client = await createClient()
   .use(generatedSigner())
-  .use(litesvm())
+  .use(litesvm({ transactionConfig: { version: 1 } }))
   .use(airdropSigner(lamports(1_000_000_000n)));
 
 client.svm.addProgramFromFile(myProgramAddress, 'program.so');
 await client.sendTransaction([myInstruction]);
 ```
+
+LiteSVM's v1 planner writes maximum limits (1.4M CU, 64 MiB) rather than estimating; override with `computeUnitLimit` / `loadedAccountsDataSizeLimit` in the same config.
 
 Full documentation: [LiteSVM](https://www.litesvm.com/docs/typescript/getting-started).
 
@@ -91,7 +109,7 @@ After applying `solanaRpc` / `solanaLocalRpc` / `solanaDevnetRpc` / `solanaMainn
 | `client.airdrop(address, lamports)` | Faucet (devnet/local/litesvm only) |
 | `client.svm` | LiteSVM instance (litesvm plugin only) |
 
-`solanaRpc({ ... })` accepts `rpcUrl` (required) plus `rpcSubscriptionsUrl`, `transactionConfig` (priority fees), `maxConcurrency`, `skipPreflight`, and the underlying `rpcConfig` / `rpcSubscriptionsConfig`. See [plugins.md](plugins.md) for the full options table, plugin catalog, and custom composition.
+`solanaRpc({ ... })` accepts `rpcUrl` (required) plus `rpcSubscriptionsUrl`, `transactionConfig` (transaction version, priority fee, `estimateResourceLimits`), `maxConcurrency`, `skipPreflight`, and the underlying `rpcConfig` / `rpcSubscriptionsConfig`. See [plugins.md](plugins.md) for the full options table, plugin catalog, and custom composition.
 
 ## Core Concepts
 
@@ -104,6 +122,23 @@ const myAddress = address('So11111111111111111111111111111111111111112');
 const myLamports = lamports(1_000_000_000n);
 const mySig = signature('5eykt...');
 ```
+
+### SOL ↔ Lamports
+
+`Sol` is a fixed-point value (`{ raw, decimals: 9, ... }`), not a bigint — convert before passing it to an instruction:
+
+```ts
+import { lamports, lamportsToSol, sol, solToLamports, formatDecimalFixedPoint } from '@solana/kit';
+
+solToLamports(sol('1.5')); // lamports(1_500_000_000n)
+lamportsToSol(lamports(1_500_000_000n)); // Sol fixed-point representing 1.5
+
+// Display
+const formatter = new Intl.NumberFormat(undefined, { maximumFractionDigits: 5 });
+formatDecimalFixedPoint(formatter, lamportsToSol(balance)); // "1.5"
+```
+
+`sol()` parses in `'strict'` rounding mode by default and throws on more than 9 fractional digits; pass a `RoundingMode` (e.g. `sol('1.1234567891', 'round')`) to accept a rounded result. In TypeScript never hand-roll `/ 1e9` — floats lose precision on large balances.
 
 ### Signers
 
@@ -265,10 +300,10 @@ See [codama.md](codama.md) for naming conventions and patterns.
 | Package | Purpose |
 |---------|---------|
 | `@solana/kit` | Main SDK, re-exports all sub-packages, exports `createClient` |
-| `@solana/kit-plugin-rpc` | All-in-one RPC plugins: `solanaRpc`, `solanaMainnetRpc`, `solanaDevnetRpc`, `solanaLocalRpc` (plus low-level `rpc`, `rpcAirdrop`, `rpcTransactionPlanner`, `rpcTransactionPlanExecutor`) |
+| `@solana/kit-plugin-rpc` | All-in-one RPC plugins: `solanaRpc`, `solanaMainnetRpc`, `solanaDevnetRpc`, `solanaLocalRpc` (plus low-level `rpc`, `rpcAirdrop`, `rpcTransactionPlanner`, `rpcTransactionPlanExecutor`). 0.19+ plans transaction v1 via `transactionConfig: { version: 1 }` |
 | `@solana/kit-plugin-signer` | Signer plugins. Default `signer*` variants set both `payer` and `identity` (`signer`, `generatedSigner`, `signerFromFile`). Use `airdropSigner` to fund an already-installed signer; use `generatedSignerWithSol` only when an airdrop function is already installed. Role-specific `payer*` and `identity*` variants for when the two roles differ. |
-| `@solana/kit-plugin-litesvm` | All-in-one `litesvm` plugin (Node.js only) for in-memory testing |
-| `@solana/kit-plugin-airdrop` | Standalone airdrop plugin (most users get this via `solanaDevnetRpc`/`solanaLocalRpc`) |
+| `@solana/kit-plugin-wallet` | Browser wallet connection (Wallet Standard): `walletSigner`, `walletPayer`, `walletIdentity`, `walletWithoutSigner`; adds `client.wallet` (`getState()`, `connect()`); `connected.supportedTransactionVersions` reports whether the wallet signs v1 (0.20+); React hooks in `@solana/kit-plugin-wallet/react` |
+| `@solana/kit-plugin-litesvm` | All-in-one `litesvm` plugin (Node.js only) for in-memory testing; 0.19+ plans transaction v1 |
 | `@solana/kit-plugin-instruction-plan` | `planAndSendTransactions` and instruction batching primitives |
 | `@solana/addresses` | Address validation |
 | `@solana/accounts` | Account fetching/decoding |
@@ -278,11 +313,14 @@ See [codama.md](codama.md) for naming conventions and patterns.
 | `@solana/transactions` | Compile/sign/serialize |
 | `@solana/transaction-messages` | Build tx messages |
 | `@solana/signers` | Signing abstraction |
-| `@solana/keychain` | Common Signing Interface for external signers |
+| `@solana/keychain` | Server-side signing across KMS, Vault, MPC and managed-wallet backends (`createKeychainSigner`). Kit client plugins in `@solana/keychain-kit-plugin`; see [keychain.md](../keychain.md) |
 | `@solana/instruction-plans` | Multi-instruction batching |
 | `@solana/errors` | Error identification/decoding |
 | `@solana/functional` | Pipe and compose utilities |
-| `@solana/react` | React wallet hooks |
+| `@solana/react` | Kit-native React bindings (`ClientProvider`, `useClient`, data/subscription hooks, SWR & TanStack Query adapters). Its legacy Wallet Standard hooks are being deprecated — use `@solana/kit-plugin-wallet/react` |
+| `@solana/compat` | Type conversions between Kit and legacy web3.js v1 values |
+
+**Deprecated packages — do not install:** `@solana/kit-plugins` (umbrella), `@solana/kit-plugin-airdrop` (use `rpcAirdrop`/`litesvmAirdrop`), `@solana/kit-plugin-payer` (use `@solana/kit-plugin-signer`), `@solana/kit-client-rpc` / `@solana/kit-client-litesvm` (use the `solanaRpc` / `litesvm` all-in-one plugins).
 
 ## Best Practices
 
@@ -290,7 +328,7 @@ See [codama.md](codama.md) for naming conventions and patterns.
 2. **Use branded types** — `address()`, `lamports()`, `signature()`.
 3. **Use `@solana-program/*`** instruction builders over hand-rolled instruction data.
 4. **Handle account existence** — `assertAccountExists()` before decode.
-5. **Set compute budget** — pass `transactionConfig` to `solanaRpc({ ... })` or use manual CU estimation for production. See [programs/compute-budget.md](programs/compute-budget.md).
+5. **Send transaction v1** — pass `transactionConfig: { version: 1, priorityFeeLamports }` to `solanaRpc({ ... })`; the client estimates both resource limits. Only the manual `pipe()` path needs hand-set budgets. See [../transactions-v1.md](../transactions-v1.md) and [programs/compute-budget.md](programs/compute-budget.md).
 
 ## Reference Files
 

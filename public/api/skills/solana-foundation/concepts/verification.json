@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/concepts",
+  "name": "solana-dev-concepts",
+  "description": "How Solana's runtime actually works — rent as a deposit, Ed25519 keys and off-curve PDAs, entrypoint dispatch, on-chain cryptography, and the transaction wire format.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/concepts/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/concepts/metadata.json",
+  "bundleHash": "sha256-cbad788f01f01925c646f5c59f81a2bbdfaf6a5b93db8cef3f9334f6a7c10d84",
+  "merkleLeaf": "sha256-ab7cd000cb872f417603e4befc0d8d4105b9513d14e5dabd72dad0daeb401545",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 5484,
+      "sha256": "sha256-bd0fd200b03f52b12c38701451f9e5c4fca326f3438863727e51238e79836272"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

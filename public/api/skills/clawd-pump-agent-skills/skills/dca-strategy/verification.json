@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "clawd-pump-agent-skills/skills/dca-strategy",
+  "name": "dca-strategy",
+  "description": "Plan and execute dollar-cost averaging strategies on Solana tokens: set the token, total budget, frequency, duration, and source token, then run equal-amount interval buys with per-buy reporting and weekly summaries. Always confirms the strategy with the user before starting.",
+  "source": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dca-strategy/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/clawd-pump-agent-skills/skills/dca-strategy/metadata.json",
+  "bundleHash": "sha256-c6f4338e25cd34f542b2f12269d9bdc3b7dd9ea2f967c59ce6c7956729015688",
+  "merkleLeaf": "sha256-2ad49557422cdb81728def8963953cbe661b4273596ccbc6993634d83857566a",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 1878,
+      "sha256": "sha256-969c86f9689463bf6e65a8d5cddb2062cf967dd19b8954098acb2f8b2d14e87f"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

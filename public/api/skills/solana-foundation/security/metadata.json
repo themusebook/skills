@@ -1,0 +1,7 @@
+{
+  "slug": "solana-foundation/security",
+  "name": "solana-dev-security",
+  "description": "Program and client security checklist covering account validation, signer checks, and common attack vectors to review before deploying.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/solana-foundation/security/SKILL.md"
+}

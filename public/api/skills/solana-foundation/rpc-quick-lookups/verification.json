@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/rpc-quick-lookups",
+  "name": "solana-dev-rpc-quick-lookups",
+  "description": "Quick on-chain lookups via public RPC + curl — wallet balance, a specific transaction, a token account balance, account info. No SDK install, no project setup.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/rpc-quick-lookups/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/rpc-quick-lookups/metadata.json",
+  "bundleHash": "sha256-aba001002efcd5645d5654635ad2242fd29d27af214af9047c96100b5109b61e",
+  "merkleLeaf": "sha256-f7956299ad2a0ec579c2baeeb92006973ff836937fc5df50914c5337a3da9f3e",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 6884,
+      "sha256": "sha256-368a50e4af87fce000658167b5297dc42ba8ff53cf437362ba4ee2a50f257b86"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

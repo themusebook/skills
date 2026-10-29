@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "solana-foundation/idl-codegen",
+  "name": "solana-dev-idl-codegen",
+  "description": "Generate type-safe program clients from IDLs using Codama, eliminating hand-maintained serializers across languages.",
+  "source": "https://skills.x402agent.io/api/skills/solana-foundation/idl-codegen/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/solana-foundation/idl-codegen/metadata.json",
+  "bundleHash": "sha256-6e5f2b3e60af7d6eccf04201692963daa6019b9d9aa527e3b9f9f19592244756",
+  "merkleLeaf": "sha256-4acee1f13f21e4757697afecc5db8b460d6462ad41947c4ad60a9371fd5eaa3c",
+  "files": [
+    {
+      "path": "SKILL.md",
+      "bytes": 2573,
+      "sha256": "sha256-0b3ec8b95c5d23145fe35f5fe8146eecf4698ab3ce3e0ee8a03a1a3f142bc670"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

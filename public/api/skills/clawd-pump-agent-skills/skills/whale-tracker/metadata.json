@@ -1,0 +1,7 @@
+{
+  "slug": "clawd-pump-agent-skills/skills/whale-tracker",
+  "name": "whale-tracker",
+  "description": "Monitor and interpret large Solana wallet movements: recent transactions over $10k, accumulation and exit patterns, new whale entries, and net flow direction, distinguishing real whale wallets from DEX aggregator, protocol, and exchange addresses.",
+  "category": "Solana / Blockchain",
+  "skill": "/api/skills/clawd-pump-agent-skills/skills/whale-tracker/SKILL.md"
+}
