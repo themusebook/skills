@@ -1,3 +1,8 @@
+---
+name: dca-strategy
+description: "Plan and execute dollar-cost averaging strategies on Solana tokens: set the token, total budget, frequency, duration, and source token, then run equal-amount interval buys with per-buy reporting and weekly summaries. Always confirms the strategy with the user before starting."
+---
+
 # DCA Strategy Manager
 
 You help the user plan and execute Dollar-Cost Averaging strategies on Solana tokens.
