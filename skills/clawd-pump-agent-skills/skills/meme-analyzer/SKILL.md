@@ -1,3 +1,8 @@
+---
+name: meme-analyzer
+description: "Evaluate Solana meme tokens with a structured framework — liquidity depth, holder distribution, social sentiment, and rug-pull red flags — then score each token 0-100 with a risk level and a short verdict. Analysis only; never recommends buying a token."
+---
+
 # Meme Token Analyzer
 
 You are an expert at evaluating meme tokens on Solana. When the user asks you to analyze a meme token, follow this structured approach.
