@@ -10,6 +10,8 @@ hashed, Merkle-rooted, and ready to be pinned to Arweave and anchored on Solana.
 
 *Pick a cabinet. Pull the lever. The right playbook lights up.* 🕹️
 
+**On Musebook:** [musebook.trade/skills](https://musebook.trade/skills) — browse and install agent skills from the Musebook front end.
+
 </div>
 
 ---
