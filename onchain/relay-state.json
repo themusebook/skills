@@ -1,10 +1,10 @@
 {
   "schemaVersion": "skillhub-relay-state/v1",
-  "updatedAt": "2026-10-29T20:28:50.831Z",
+  "updatedAt": "2026-11-24T21:27:46.953Z",
   "reason": "one-shot",
-  "totalSkills": 628,
+  "totalSkills": 629,
   "nvidiaSkills": 229,
-  "merkleRoot": "sha256-0d0a18afe93788134c3ef84e6f4b1e287d0d7d63a18826243ff73ddbded0e66d",
-  "catalogHash": "sha256-1461d37cade8eef4cf59fd1669849cfb82d076cf3fc8ad17687c75bd66a426ea",
-  "durationMs": 2526
+  "merkleRoot": "sha256-eb74a785a183b3e21892e3f82bf57ed207f416c9562d8d2d99654274fd5ff426",
+  "catalogHash": "sha256-8811b2fe0a7c308416239da739487022dff4d37641165409dc668a3506a9077c",
+  "durationMs": 4202
 }
