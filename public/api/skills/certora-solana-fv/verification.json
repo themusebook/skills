@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "certora-solana-fv",
+  "name": "certora-solana-fv",
+  "description": "How an agent connects to Certora with its own key and formally verifies a Solana program with CVLR specs, from toolchain setup through cloud submission to honest verdict reporting, including the Certora platform engines (AutoProver, AI Auditor) and the REST API.",
+  "source": "https://skills.x402agent.io/api/skills/certora-solana-fv/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/certora-solana-fv/metadata.json",
+  "bundleHash": "sha256-eb05d9bd194681b0e9d340ee3c06c8cd1e6fab42687524814d67c148b88b884a",
+  "merkleLeaf": "sha256-3f003ddd1596f1855b458250b201f8f782dd8f94333f03f728cc972005b59c2c",
+  "files": [
+    {
+      "path": "references/platform-and-api.md",
+      "bytes": 7585,
+      "sha256": "sha256-700ba52268b05346f9cab720d2e5a24eb3323b8768af11cf9a70d2414f617c0f"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "bytes": 8164,
+      "sha256": "sha256-307e81d6d2b3159dcea03ae7a1d908473fa76cb6a59d93e951aa5444d959f42b"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 14369,
+      "sha256": "sha256-6201d7098aa67ce4c75e7a78699e3c08ca339bc4502cbb91728a049582350b30"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}

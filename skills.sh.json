@@ -8,6 +8,7 @@
       "skills": [
         "anthropic-skills/claude-api",
         "ask-mcp",
+        "certora-solana-fv",
         "cheshire-agent-registries",
         "cheshire-api",
         "cheshire-noxa",

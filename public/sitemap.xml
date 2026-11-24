@@ -13,6 +13,9 @@
   <url><loc>https://skills.x402agent.io/api/skills/ask-mcp/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/ask-mcp/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/ask-mcp/SKILL.md</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/certora-solana-fv/metadata.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/certora-solana-fv/verification.json</loc></url>
+  <url><loc>https://skills.x402agent.io/api/skills/certora-solana-fv/SKILL.md</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/cheshire-agent-registries/metadata.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/cheshire-agent-registries/verification.json</loc></url>
   <url><loc>https://skills.x402agent.io/api/skills/cheshire-agent-registries/SKILL.md</loc></url>

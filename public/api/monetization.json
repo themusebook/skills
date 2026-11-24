@@ -47,6 +47,19 @@
       "offchainEnabled": false
     },
     {
+      "slug": "certora-solana-fv",
+      "name": "certora-solana-fv",
+      "category": "Solana / Blockchain",
+      "mode": "tip",
+      "merchant": {
+        "name": "Skill Hub",
+        "wallet": ""
+      },
+      "network": "mainnet",
+      "onchainEnabled": false,
+      "offchainEnabled": false
+    },
+    {
       "slug": "cheshire-agent-registries",
       "name": "cheshire-agent-registries",
       "category": "Solana / Blockchain",

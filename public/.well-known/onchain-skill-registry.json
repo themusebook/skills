@@ -7,9 +7,9 @@
   "cluster": "mainnet-beta",
   "status": "anchor-ready",
   "hashAlgorithm": "sha256",
-  "totalSkills": 628,
-  "catalogHash": "sha256-1461d37cade8eef4cf59fd1669849cfb82d076cf3fc8ad17687c75bd66a426ea",
-  "merkleRoot": "sha256-0d0a18afe93788134c3ef84e6f4b1e287d0d7d63a18826243ff73ddbded0e66d",
+  "totalSkills": 629,
+  "catalogHash": "sha256-8811b2fe0a7c308416239da739487022dff4d37641165409dc668a3506a9077c",
+  "merkleRoot": "sha256-eb74a785a183b3e21892e3f82bf57ed207f416c9562d8d2d99654274fd5ff426",
   "solana": {
     "registryProgramId": null,
     "registryPda": null,
@@ -47,6 +47,17 @@
       "fileCount": 1,
       "metadata": "/api/skills/ask-mcp/metadata.json",
       "verification": "/api/skills/ask-mcp/verification.json"
+    },
+    {
+      "slug": "certora-solana-fv",
+      "name": "certora-solana-fv",
+      "description": "How an agent connects to Certora with its own key and formally verifies a Solana program with CVLR specs, from toolchain setup through cloud submission to honest verdict reporting, including the Certora platform engines (AutoProver, AI Auditor) and the REST API.",
+      "category": "Solana / Blockchain",
+      "bundleHash": "sha256-eb05d9bd194681b0e9d340ee3c06c8cd1e6fab42687524814d67c148b88b884a",
+      "merkleLeaf": "sha256-3f003ddd1596f1855b458250b201f8f782dd8f94333f03f728cc972005b59c2c",
+      "fileCount": 3,
+      "metadata": "/api/skills/certora-solana-fv/metadata.json",
+      "verification": "/api/skills/certora-solana-fv/verification.json"
     },
     {
       "slug": "cheshire-agent-registries",

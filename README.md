@@ -3,9 +3,9 @@
 <img src="./assets/hub-banner.svg" alt="Skill Hub — an animated constellation of agent skills" width="100%" />
 
 [![skills.sh](https://skills.sh/b/Solizardking/skills)](https://skills.sh/Solizardking/skills)
-![Skills](https://img.shields.io/badge/skills-628-8A2BE2?style=flat-square) ![Categories](https://img.shields.io/badge/categories-10-00C2FF?style=flat-square) ![Google](https://img.shields.io/badge/google_integration-69_skills-4285F4?style=flat-square) ![NVIDIA](https://img.shields.io/badge/nvidia_integration-229_skills-76B900?style=flat-square) ![Verified](https://img.shields.io/badge/merkle-verified-14F195?style=flat-square) ![Arweave](https://img.shields.io/badge/arweave-permanent-222222?style=flat-square) ![Solana](https://img.shields.io/badge/solana-anchored-9945FF?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-629-8A2BE2?style=flat-square) ![Categories](https://img.shields.io/badge/categories-10-00C2FF?style=flat-square) ![Google](https://img.shields.io/badge/google_integration-69_skills-4285F4?style=flat-square) ![NVIDIA](https://img.shields.io/badge/nvidia_integration-229_skills-76B900?style=flat-square) ![Verified](https://img.shields.io/badge/merkle-verified-14F195?style=flat-square) ![Arweave](https://img.shields.io/badge/arweave-permanent-222222?style=flat-square) ![Solana](https://img.shields.io/badge/solana-anchored-9945FF?style=flat-square)
 
-**628 installable agent skills** — including a **69-skill Google integration** and a **229-skill NVIDIA stack** (CUDA, Jetson, NeMo, DeepStream, cuOpt, TAO, Holoscan, Earth-2). Every one is a `SKILL.md` playbook your agent can pull off the shelf —
+**629 installable agent skills** — including a **69-skill Google integration** and a **229-skill NVIDIA stack** (CUDA, Jetson, NeMo, DeepStream, cuOpt, TAO, Holoscan, Earth-2). Every one is a `SKILL.md` playbook your agent can pull off the shelf —
 hashed, Merkle-rooted, and ready to be pinned to Arweave and anchored on Solana.
 
 *Pick a cabinet. Pull the lever. The right playbook lights up.* 🕹️
@@ -22,7 +22,7 @@ Ten zones. Every skill lives in exactly one. Click a zone to jump to its catalog
 
 | Zone | Skills | Power level | What lives here |
 |---|---:|---|---|
-| [🟣 **Solana / Blockchain**](#-solana--blockchain) | 156 | `████████████░░░░░░` | The deep end: DeFi, perps, tokens, ZK, and on-chain agents |
+| [🟣 **Solana / Blockchain**](#-solana--blockchain) | 157 | `████████████░░░░░░` | The deep end: DeFi, perps, tokens, ZK, and on-chain agents |
 | [🛠️ **Dev Tools / Agents**](#️-dev-tools--agents) | 70 | `██████░░░░░░░░░░░░` | Build, orchestrate, and ship with agent tooling |
 | [📣 **Google / Ads**](#-google--ads) | 11 | `█░░░░░░░░░░░░░░░░░` | Google Ads APIs, campaigns, and reporting |
 | [📈 **Google / Analytics**](#-google--analytics) | 2 | `█░░░░░░░░░░░░░░░░░` | GA4 data APIs and measurement |
@@ -39,7 +39,7 @@ The hub is a source catalog plus generated distribution surfaces. Canonical skil
 
 | Layer | What it contains | Main paths |
 |---|---|---|
-| Skill sources | 628 canonical skills. Each slug is the directory path (relative to `skills/`) that owns a `SKILL.md`. | `skills/*/SKILL.md`, `skills/google/**/SKILL.md`, `skills/nvidia/*/SKILL.md`, `skills/anthropic-skills/*/SKILL.md`, plus optional `references/`, `scripts/`, `assets/`, and `agents/` folders |
+| Skill sources | 629 canonical skills. Each slug is the directory path (relative to `skills/`) that owns a `SKILL.md`. | `skills/*/SKILL.md`, `skills/google/**/SKILL.md`, `skills/nvidia/*/SKILL.md`, `skills/anthropic-skills/*/SKILL.md`, plus optional `references/`, `scripts/`, `assets/`, and `agents/` folders |
 | Catalog builder | The single source of generated truth for README, Hub docs, catalog JSON, public API, static UI, bundle hashes, and Merkle registry. | [`scripts/build-catalog.mjs`](./scripts/build-catalog.mjs), [`catalog.json`](./catalog.json), [`skills.sh.json`](./skills.sh.json), [`HUB.md`](./HUB.md) |
 | Installer CLI | Lists and installs skills into agent skill roots without external dependencies. | [`bin/skills.mjs`](./bin/skills.mjs), [`package.json`](./package.json) |
 | Static site and API | Browser catalog, per-skill metadata, mirrored `SKILL.md` files, copied public resources, CORS-ready JSON endpoints, and generated payment config. | [`public/index.html`](./public/index.html), [`public/api/skills.json`](./public/api/skills.json), `public/api/skills/**`, [`public/api/monetization.json`](./public/api/monetization.json) |
@@ -50,12 +50,12 @@ The hub is a source catalog plus generated distribution surfaces. Canonical skil
 
 ### Source Families
 
-This is the same 628-skill inventory grouped by where the source directories live. The full per-skill catalog appears below.
+This is the same 629-skill inventory grouped by where the source directories live. The full per-skill catalog appears below.
 
 | Source family | Skills | What it covers |
 |---|---:|---|
 | `nvidia/*` | 229 | NVIDIA accelerated computing: CUDA/cuDF, Jetson BSP, NeMo, DeepStream, cuOpt, TAO, Holoscan, Earth-2, Dynamo, and digital health. |
-| `single/root skills` | 136 | One-skill source directories for local tools, messaging, utilities, media, devices, and specialized workflows. |
+| `single/root skills` | 137 | One-skill source directories for local tools, messaging, utilities, media, devices, and specialized workflows. |
 | `google/*` | 69 | Nested Google Ads, Analytics, Cloud, GKE, BigQuery, Firebase, Gemini, and Well-Architected Framework skills. |
 | `pump/pumpfun/*` | 29 | Pump.fun and pump-program launch, fee, security, wallet, testing, SDK, and token-lifecycle workflows. |
 | `solana/*` | 25 | Solana development, formal verification, Clawd, Redpill verifier, rent-free, and agentic-commerce skills. |
@@ -248,7 +248,7 @@ Every skill, every zone. Click a zone to expand it — descriptions keep the exa
 
 ### 🟣 Solana / Blockchain
 
-> The deep end: DeFi, perps, tokens, ZK, and on-chain agents — **156 skills**
+> The deep end: DeFi, perps, tokens, ZK, and on-chain agents — **157 skills**
 
 <details>
 <summary>Open the Solana / Blockchain cabinet</summary>
@@ -257,6 +257,7 @@ Every skill, every zone. Click a zone to expand it — descriptions keep the exa
 |---|---|---|
 | [`anthropic-skills/claude-api`](./skills/anthropic-skills/claude-api/SKILL.md) | claude-api | Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; don't skip because it "looks like a one-liner" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens). SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai\|langchain_openai\|google.generativeai\|genai\|mistralai\|cohere\|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file). |
 | [`ask-mcp`](./skills/ask-mcp/SKILL.md) | ask-mcp | For questions about Light Protocol's SDK, smart contracts and Solana development, Claude Code features, or agent skills. AI-powered answers grounded in repository context via DeepWiki MCP. |
+| [`certora-solana-fv`](./skills/certora-solana-fv/SKILL.md) | certora-solana-fv | How an agent connects to Certora with its own key and formally verifies a Solana program with CVLR specs, from toolchain setup through cloud submission to honest verdict reporting, including the Certora platform engines (AutoProver, AI Auditor) and the REST API. |
 | [`cheshire-agent-registries`](./skills/cheshire-agent-registries/SKILL.md) | cheshire-agent-registries | Overview of the ERC-8004 Cheshire agent registry suite on Robinhood Chain: identity (ERC-721 RHAGENT), reputation feedback, validation request/response, and optional zk-omni messenger. Use when registering agents, reading registry addresses, wiring forge/UI, or deploying operator tooling. Product host: funpump.ai · forge: cheshireterminal.ai/agents/forge. |
 | [`cheshire-api`](./skills/cheshire-api/SKILL.md) | cheshire-api | Call Cheshire Terminal REST, MCP, discovery, and developer API surfaces for Solana agents, arena rooms, Upstash boxes, trading health, and OpenAPI. Use when integrating cheshireterminal.ai, /mcp, /.well-known/agent-card.json, ct_sk_ API keys, arena coordination, box handoff, or Apigee/zero-service health probes. |
 | [`cheshire-noxa`](./skills/cheshire-noxa/SKILL.md) | cheshire-noxa | NOXA Fun/DEX collab for Cheshire Terminal — launch feed, DEX registry, QuoterV2 quotes, EVM RPC. One-shot npm package @x402solana/cheshire-noxa. |

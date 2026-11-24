@@ -15,9 +15,9 @@
     "skillsStore": "https://cheshireterminal.ai/skills-store"
   },
   "generatedAt": "1970-01-01T00:00:00.000Z",
-  "totalSkills": 628,
+  "totalSkills": 629,
   "categories": {
-    "Solana / Blockchain": 156,
+    "Solana / Blockchain": 157,
     "Dev Tools / Agents": 70,
     "Google / Ads": 11,
     "Google / Analytics": 2,
@@ -32,6 +32,7 @@
     "solana": [
       "anthropic-skills/claude-api",
       "ask-mcp",
+      "certora-solana-fv",
       "cheshire-agent-registries",
       "cheshire-api",
       "cheshire-noxa",
@@ -52,8 +53,7 @@
       "clawd-pump-agent-skills/skills/straight-talk",
       "clawd-pump-agent-skills/skills/survivor-check",
       "clawd-pump-agent-skills/skills/whale-tracker",
-      "clawd-skills-installer",
-      "clawd-token-ops"
+      "clawd-skills-installer"
     ],
     "prioritySkills": [
       "solana-common-errors",
@@ -83,8 +83,8 @@
   "verification": {
     "chain": "solana",
     "status": "anchor-ready",
-    "merkleRoot": "sha256-0d0a18afe93788134c3ef84e6f4b1e287d0d7d63a18826243ff73ddbded0e66d",
-    "catalogHash": "sha256-1461d37cade8eef4cf59fd1669849cfb82d076cf3fc8ad17687c75bd66a426ea"
+    "merkleRoot": "sha256-eb74a785a183b3e21892e3f82bf57ed207f416c9562d8d2d99654274fd5ff426",
+    "catalogHash": "sha256-8811b2fe0a7c308416239da739487022dff4d37641165409dc668a3506a9077c"
   },
   "monetization": {
     "onchain": "Solana Pay tip URI per skill card",
