@@ -4,6 +4,8 @@ Field record from the Dark Protocol pilot of 2026-11-18, run with aristotlelib 3
 
 ## Install
 
+- Canonical source: Harmonic's installation docs, https://aristotle.harmonic.fun/docs/installation (the "MCP & CLI" page), with Harmonic's agent-setup guide at https://aristotle.harmonic.fun/agent-setup.md. The route below is our pinned, hardened variant of what those pages document; install facts confirmed against them on 2026-11-25.
+
 - Create the venv under the home directory and pin the version:
 
   `python3 -m venv ~/workspace/aristotle-cli/venv`
@@ -12,7 +14,7 @@ Field record from the Dark Protocol pilot of 2026-11-18, run with aristotlelib 3
 
 - Verify with `~/workspace/aristotle-cli/venv/bin/aristotle --version`, which prints `aristotlelib 3.4.0`.
 
-- Harmonic's documented alternative is `uv tool install "aristotlelib>=3"`, untested here. Prefer the pinned venv: the pilot's calibration is tied to 3.4.0, and a newer library is a deliberate upgrade, not an accident of timing.
+- Harmonic's documented primary install is `uv tool install "aristotlelib>=3"` (global, no venv; the installation page's one-liner also installs uv if missing and logs you in, and re-running it upgrades). The venv install above is the docs' documented alternative — "also how you get the library" — with the specifier `pip install "aristotlelib>=3"`. Prefer our pinned venv anyway: the pilot's calibration is tied to 3.4.0 (still the current PyPI release as of 2026-11-25), and a newer library is a deliberate upgrade, not an accident of timing. The docs pin no patch version; their contract is the 3.x line.
 
 - Never recreate the pilot's original location. The first venv lived at /aristotle-scratch/venv on the root overlay and was lost in the VM replacement of 2026-11-24. Older records, including READINESS.md in the harmonic-grant repository, name the scratch path; the home path in this file supersedes it, because the home directory survives replacement and the overlay does not.
 
@@ -33,6 +35,10 @@ Field record from the Dark Protocol pilot of 2026-11-18, run with aristotlelib 3
 - The `< /dev/null` is load-bearing: with stdin at EOF the CLI takes the browser device-code path, printing an approval-page address and a code. Without it the CLI can wait on an interactive path that never completes in an agent shell.
 
 - A human approves the code in a browser. On first login that human also creates the Aristotle account and chooses the organization the machine key belongs to; both are the dev's acts, never the agent's.
+
+- The approval code expires after 10 minutes (docs, confirmed 2026-11-25). For agent-driven flows the docs give `aristotle login --json`, which emits {"verification_uri", "user_code", "expires_in"} for the human to approve in a browser; the key goes straight to the CLI and never passes through the conversation. `aristotle login --no-browser` is the variant when no browser can open locally.
+
+- For CI/scripts the docs name an environment-variable route: `ARISTOTLE_API_KEY` overrides a stored key, and a key can be piped in (`printf '%s\n' "$KEY" | aristotle login`) or passed to a single command. We do not use these routes operationally — the stored device-code key is our route — but know they exist before declaring a login impossible.
 
 - The CLI stores a machine-named API key in ~/.config/aristotle/credentials.json (0600). The pilot key was named "aristotle CLI on htch-runtime" and billed to the dev's personal organization. Refer to the file by name and location only; never open, print, copy, or commit it. Revocation lives in the web UI under API keys.
 
@@ -80,10 +86,14 @@ Field record from the Dark Protocol pilot of 2026-11-18, run with aristotlelib 3
 
 - A queued task can be cancelled through the CLI on the dev's order. The orderbook pilot's task was cancelled while QUEUED (never started); its project and uploaded files remained intact, and restarting it would be a continue — a new billed run.
 
+- More of the current command surface (docs/PyPI command table, confirmed 2026-11-25; untested here beyond the pilot's set): `aristotle properties <project>` and `aristotle property <project-id> <name>` read the Properties table from the terminal (terminal labels read REFUTED with an EVIDENCE column; `(unchecked)` marks results from early-ended runs); `aristotle tasks` lists a project's tasks; `aristotle list` lists projects; `rename`, `archive`/`unarchive`, and `delete <project>` manage projects (delete is permanent; a project with a running task can't be archived or deleted). Scripting contract: exit 5 means no key or a rejected key (`aristotle list --limit 1 --json` is the docs' access check), exit 10 means a `--non-interactive` wait stopped because questions are pending, exit 6 covers rate-limiting and insufficient credits to start a run.
+
 ## Watch pattern
 
 - The pilot used a roughly 10-minute polling watch over status and questions, reporting terminal transitions and each new question ID once. Remove or disable the watch when the run reaches a terminal state; the Dark watch removed itself at the run's end, and the orderbook watch was disabled, not removed, when its run was paused.
 
 ## MCP surface (documented, untested)
 
-- Harmonic documents an MCP endpoint at https://aristotle.harmonic.fun/mcp with OAuth sign-in against the same account. Nobody here has run it. It carries the same uploaded-code disclosure as the CLI, so it inherits the same per-project approval gate.
+- Harmonic runs a hosted MCP server at https://aristotle.harmonic.fun/mcp with OAuth sign-in against the same account — no key to copy. Per-client setup (Claude Code, Claude Desktop, claude.ai, ChatGPT, Codex, Cursor, VS Code) is on the installation page: https://aristotle.harmonic.fun/docs/installation. Documented tools: get_credit_balance, create_upload, start_run, get_run, wait_for_run, answer_question, send_message, list_properties, get_property, continue_run, list_projects, list_runs, create_download, cancel_run, rename_project, delete_project, send_feedback. MCP billing behaviour per the docs: the first run asks which organization pays and that confirmation holds for 90 days (prompt-only new projects ask each time; every run asks while org credits are low).
+
+- Nobody here has run it. It carries the same uploaded-code disclosure as the CLI, so it inherits the same per-project approval gate, and the same rule against answering questions for the dev — the MCP `answer_question` tool changes nothing about whose decision a scope answer is.

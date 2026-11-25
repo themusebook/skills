@@ -16,7 +16,9 @@
 
 ## Connect and install the CLI
 
-- Install the pinned CLI into a venv under the home directory at ~/workspace/aristotle-cli, with python3 -m venv followed by pip install of aristotlelib==3.4.0. Confirm aristotle --version prints aristotlelib 3.4.0 before first use, matching the version the pilot ran on.
+- Start from Harmonic's official installation docs, the canonical setup source: https://aristotle.harmonic.fun/docs/installation (the "MCP & CLI" page: per-client MCP setup, CLI install, and the login flow). The docs' primary CLI install is `uv tool install "aristotlelib>=3"` (global, no venv to create or activate); installing into a venv with pip is their documented alternative, and is also how you get the library. The pinned route below is our hardened variant of that alternative; where it differs from the docs' defaults it differs deliberately, and says why.
+
+- Install the pinned CLI into a venv under the home directory at ~/workspace/aristotle-cli, with python3 -m venv followed by pip install of aristotlelib==3.4.0. Confirm aristotle --version prints aristotlelib 3.4.0 before first use, matching the version the pilot ran on. (Checked 2026-11-25: PyPI's current release is still 3.4.0, dated 2026-11-18; the docs pin no patch version — their contract is the 3.x line, and the version check prints `aristotlelib 3.` plus the rest.)
 
 - Never install into root-overlay scratch such as /aristotle-scratch. The pilot's venv lived there and was lost in the VM replacement of 2026-11-24, while everything under the home directory survived. The home venv path supersedes the old scratch path wherever older records name it.
 
@@ -26,11 +28,11 @@
 
 - Treat the stored credential as a name and a location only. Login writes a machine-named API key to ~/.config/aristotle/credentials.json with 0600 permissions; never open it, print it, copy it, or commit it. The key is revocable in the web UI under API keys, and the pilot key was billed to the dev's personal organization.
 
-- Note the MCP alternative without treating it as a shortcut. Adding https://aristotle.harmonic.fun/mcp to an MCP-capable assistant signs in with OAuth against the same account and the same uploaded code, so it changes the transport, not the disclosure decision. This route is documented by Harmonic and untested by us.
+- Note the MCP alternative without treating it as a shortcut. Harmonic runs a hosted MCP server at https://aristotle.harmonic.fun/mcp; per-client setup is on the installation page (https://aristotle.harmonic.fun/docs/installation). It signs in with OAuth against the same account — there is no key to copy — and exposes the full workflow as tools (get_credit_balance, create_upload, start_run, get_run, wait_for_run, answer_question, send_message, list_properties, get_property, continue_run, list_projects, list_runs, create_download, cancel_run, rename_project, delete_project, send_feedback). It operates on the same uploaded code, so it changes the transport, not the disclosure decision, and it inherits the per-project approval gate in full. This route is documented by Harmonic and untested by us.
 
 ## Respect the credit discipline
 
-- Read credits as dollars. One credit is approximately one US dollar, consumption is metered while a run works, and Harmonic publishes no per-proof or per-run price list, so every cost figure in this skill is a dated observation or a labelled estimate, never a quote.
+- Read credits as the billing unit, and treat the dollar conversion as unverified. Consumption is metered while a run works, and Harmonic publishes no per-proof or per-run price list. FLAG (checked against the docs 2026-11-25): no current Harmonic page states a credit-to-dollar rate; the CLI reference says balance amounts use the billing page's configured Credit unit and precision, and `aristotle balance` prints the conversion for the organization. Pilot-era planning treated one credit as approximately one US dollar, and every dollar figure in this skill and its references rests on that assumption — keep them labelled as estimates, and read the live conversion from a balance check before proposing spend.
 
 - Check the balance with aristotle balance before and after every run. The output separates Available from Free, Purchased, and Granted lines, and watching it drain during the pilot is how the burn rate became known.
 
@@ -99,6 +101,8 @@
 - If nothing here fits, look on the web for a maintained API or MCP server and set it up with [Custom Connectors and MCPs](/opt/muse/skills/custom-connector-setup/SKILL.md), or build a custom connector.
 
 ## Websites
+
+- [Aristotle installation docs](https://aristotle.harmonic.fun/docs/installation) for the canonical setup page ("MCP & CLI"): per-client MCP setup, CLI install and login, upload exclusions, and billing behaviour. The docs root is https://aristotle.harmonic.fun/docs (overview, properties tracking, FAQ, the Rust verification page, and the SDK reference at /docs/api), and Harmonic's own agent-setup guide is https://aristotle.harmonic.fun/agent-setup.md.
 
 - [Aristotle](https://aristotle.harmonic.fun/) for the web app: account creation, organization and API key management, question answering, and run pages. The pilot project lives at https://aristotle.harmonic.fun/projects/4d9bdb7f-7176-492d-9e31-219601fc0f30 as the worked example of a stopped run's record.
 

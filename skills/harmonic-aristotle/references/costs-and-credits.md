@@ -4,11 +4,11 @@ Everything here is an observation from 2026-11-18 or a labelled estimate built o
 
 ## The credit model
 
-- One credit is approximately one US dollar (Harmonic's own framing in its docs, as recorded at pilot time).
+- One credit was treated as approximately one US dollar in pilot-era planning. FLAG (docs re-checked 2026-11-25): no current Harmonic page — docs, PyPI, or product page — states a credit-to-dollar rate. The CLI reference says `aristotle balance` amounts use the billing page's configured Credit unit and precision and that the command prints the conversion, so the rate is an organization billing setting, not a published constant. Every dollar figure in this file (including the $1,000–$2,000 completion estimate) rests on the ≈$1 assumption; re-read the conversion from a live balance check before treating any of them as money.
 
 - Billing is consumption-based: credits drain while a run works, not per property closed. Proved, refuted, and unresolved properties all consume; the pilot paid full price for seven unresolved ones.
 
-- Sign-up included 500 free credits. The pilot's grant was listed as an active grant of 500 Credits with an expiry of 2026-12-18 — granted credits can expire, so a grant's date is part of its value.
+- Sign-up included 500 free credits. The pilot's grant was listed as an active grant of 500 Credits with an expiry of 2026-12-18 — granted credits can expire, so a grant's date is part of its value. (External framing conflicts, unresolved by the docs: Harmonic's own site banner says "500 free credits", while third-party launch coverage described "$500 in credits, valid for 30 days". The docs state neither a dollar value nor a standard validity; the account read above is the only figure we treat as fact.)
 
 - The first run asks which organization pays. Per Harmonic's docs, runs billed to that organization then start unasked for 90 days unless credits run low. An approval to submit once is therefore not a standing approval, and this skill's per-project gate applies to every submission regardless.
 
