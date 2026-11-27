@@ -1,0 +1,5 @@
+name: "local_harmonic_aristotle"
+title: "Harmonic Aristotle Formal Verification"
+description: "How an agent connects to Harmonic's Aristotle prover with its own account and formally verifies a Rust (Solana) program: CLI install and login, credit discipline, bundle preparation with secret scan and dry-run, the per-project disclosure-approval gate, submission, the clarifying-questions protocol, monitoring, and honest verdict reporting."
+category: "Work and knowledge"
+include_in_prompt: true
