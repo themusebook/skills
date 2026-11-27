@@ -69,7 +69,32 @@ const PUBLIC_RESOURCE_DIRS = ["references", "scripts", "assets", "agents"];
 const PUBLIC_ROOT_RESOURCE_EXTENSIONS = new Set([".md", ".json", ".yaml", ".yml"]);
 const PUBLIC_COPY_EXCLUDES = new Set([".DS_Store", ".git", "__pycache__", "node_modules"]);
 const PUBLIC_COPY_EXCLUDED_EXTENSIONS = new Set([".pyc", ".pyo"]);
+// Skills copied from github.com/emilkowalski/skills (MIT, Copyright 2026 Emil Kowalski).
+const EMILKOWALSKI_SKILLS = [
+  "animate",
+  "animate-expo",
+  "animation-performance",
+  "animation-vocabulary",
+  "apple-design",
+  "ask-emil",
+  "ask-sonner",
+  "break-ui",
+  "choreograph",
+  "emil-design-eng",
+  "find-animation-opportunities",
+  "gestures",
+  "improve-animations",
+  "learn-taste",
+  "mobile-native",
+  "pick-ui-library",
+  "prototype",
+  "remove-animations",
+  "review-animations",
+  "write-swift",
+];
+
 const CATEGORY_OVERRIDES = new Map([
+  ...EMILKOWALSKI_SKILLS.map((slug) => [slug, "Dev Tools / Agents"]),
   ["ask-mcp", "Solana / Blockchain"],
   ["compressed-pda", "Solana / Blockchain"],
   ["compressed-token", "Solana / Blockchain"],
@@ -460,7 +485,9 @@ async function addPublicRootResources(files, skill) {
     if (entry.name === "SKILL.md") continue;
     if (entry.name === "metadata.json" || entry.name === "verification.json") continue;
     if (entry.name.startsWith(".") || PUBLIC_COPY_EXCLUDES.has(entry.name)) continue;
-    if (!PUBLIC_ROOT_RESOURCE_EXTENSIONS.has(path.extname(entry.name).toLowerCase())) continue;
+    const ext = path.extname(entry.name).toLowerCase();
+    const isLicenseNotice = /^(license|notice|copying)(?:\.(md|txt))?$/i.test(entry.name);
+    if (!isLicenseNotice && !PUBLIC_ROOT_RESOURCE_EXTENSIONS.has(ext)) continue;
 
     files.set(`api/skills/${skill.slug}/${entry.name}`, await readFile(path.join(skillDir, entry.name)));
   }
@@ -518,7 +545,7 @@ function renderReadme(catalog) {
     ["🧭 Agent orchestration mode", "goal loops, handoffs, subagents, deep SWE runs, self-scheduling", catalog.filter((skill) => skill.slug.startsWith("agent-orchestration/"))],
     ["✍️ Productivity mode", "grill, teach, handoff, and write great skills", catalog.filter((skill) => skill.slug.startsWith("productivity/"))],
     ["🧠 Thinking & docs mode", "brain-to-docs, ADRs, prompts, level-up, concise teaching", catalog.filter((skill) => skill.slug.startsWith("thinking-and-docs/"))],
-    ["🎨 Design & motion mode", "Apple HIG, Emil design-eng, animation vocabulary, review animations", catalog.filter((skill) => ["animation-vocabulary", "apple-design", "emil-design-eng", "review-animations"].includes(skill.slug))],
+    ["🎨 Design & motion mode", "Emil Kowalski design-engineering skills: motion, Apple HIG, taste, and review", catalog.filter((skill) => EMILKOWALSKI_SKILLS.includes(skill.slug))],
     ["🔬 Research & web mode", "deep research, browser harness, transcripts, shopping, web search", catalog.filter((skill) => skill.slug.startsWith("research-and-web/"))],
     ["📦 Skill authoring mode", "write, distribute, and push agent skills across every client", catalog.filter((skill) => skill.slug.startsWith("skill-authoring/"))],
     ["⚙️ Ops & setup mode", "readonly DB roles, cyber audit, Safe Browsing, custom models, setup help", catalog.filter((skill) => skill.slug.startsWith("ops-and-setup/"))],
@@ -616,7 +643,7 @@ function renderReadme(catalog) {
     "npx github:Solizardking/skillhub install productivity/grill-me productivity/teach productivity/writing-great-skills thinking-and-docs/brain-to-docs thinking-and-docs/prompt-me",
     "",
     "# Premiere: design & motion",
-    "npx github:Solizardking/skillhub install apple-design emil-design-eng animation-vocabulary review-animations",
+    "npx github:Solizardking/skillhub install animate animate-expo animation-performance animation-vocabulary apple-design ask-emil ask-sonner break-ui choreograph emil-design-eng find-animation-opportunities gestures improve-animations learn-taste mobile-native pick-ui-library prototype remove-animations review-animations write-swift",
     "",
     "# Premiere: research, skill authoring, ops",
     "npx github:Solizardking/skillhub install research-and-web/deep-research research-and-web/browser-harness skill-authoring/effective-agent-skills ops-and-setup/setup-help",
@@ -800,7 +827,7 @@ function renderHub(catalog) {
     "npx github:Solizardking/skillhub install engineering/tdd engineering/implement engineering/triage engineering/codebase-design engineering/to-spec --force",
     "npx github:Solizardking/skillhub install agent-orchestration/goal-loop agent-orchestration/handoff agent-orchestration/codex-subagent agent-orchestration/run-deep-swe",
     "npx github:Solizardking/skillhub install productivity/grill-me productivity/teach productivity/writing-great-skills thinking-and-docs/brain-to-docs thinking-and-docs/prompt-me",
-    "npx github:Solizardking/skillhub install apple-design emil-design-eng animation-vocabulary review-animations",
+    "npx github:Solizardking/skillhub install animate animate-expo animation-performance animation-vocabulary apple-design ask-emil ask-sonner break-ui choreograph emil-design-eng find-animation-opportunities gestures improve-animations learn-taste mobile-native pick-ui-library prototype remove-animations review-animations write-swift",
     "npx github:Solizardking/skillhub install research-and-web/deep-research research-and-web/browser-harness skill-authoring/effective-agent-skills ops-and-setup/setup-help",
     "npx github:Solizardking/skillhub install misc/setup-pre-commit in-progress/wizard personal/obsidian-vault deprecated/qa",
     "```",
@@ -981,7 +1008,7 @@ export function sourceFamily(slug) {
   if (slug.startsWith("agent-orchestration/")) return "agent-orchestration/*";
   if (slug.startsWith("productivity/")) return "productivity/*";
   if (slug.startsWith("thinking-and-docs/")) return "thinking-and-docs/*";
-  if (["animation-vocabulary", "apple-design", "emil-design-eng", "review-animations"].includes(slug)) return "design-motion/*";
+  if (EMILKOWALSKI_SKILLS.includes(slug)) return "design-motion/*";
   if (slug.startsWith("research-and-web/")) return "research-and-web/*";
   if (slug.startsWith("skill-authoring/")) return "skill-authoring/*";
   if (slug.startsWith("ops-and-setup/")) return "ops-and-setup/*";

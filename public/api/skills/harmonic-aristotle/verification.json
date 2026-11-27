@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "skill-verification/v1",
+  "slug": "harmonic-aristotle",
+  "name": "harmonic-aristotle",
+  "description": "Harmonic Aristotle Formal Verification",
+  "source": "https://skills.x402agent.io/api/skills/harmonic-aristotle/SKILL.md",
+  "metadata": "https://skills.x402agent.io/api/skills/harmonic-aristotle/metadata.json",
+  "bundleHash": "sha256-765b2f4b42f4570a32072a7d1365088a73181bf4eeb9c3083a57e41de1ce7d9e",
+  "merkleLeaf": "sha256-9533ad2afbc1a28874dba2b27467f29453cfc290c46b99bce64f47641c372f75",
+  "files": [
+    {
+      "path": "references/cli-and-quirks.md",
+      "bytes": 10606,
+      "sha256": "sha256-e71b4d63f5ddb70dbc431c27146eaa737dcbdfca1a8e9978797c2affe8dfe044"
+    },
+    {
+      "path": "references/costs-and-credits.md",
+      "bytes": 5333,
+      "sha256": "sha256-6fbea7e5eb5c9806544ec3d031d1028f03bb0925a775c04b93223af588dd3052"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 15958,
+      "sha256": "sha256-f90dba084aef51e88913cabd4d19f7fdf025c5fc9ff124fa7aa93ce446bdbe5a"
+    },
+    {
+      "path": "skill.yaml",
+      "bytes": 494,
+      "sha256": "sha256-717745380cd592cd92f9efb5f96f0abc8676642ed13eb3f6d22c24c3c246f7a7"
+    }
+  ],
+  "registry": "https://skills.x402agent.io/.well-known/onchain-skill-registry.json",
+  "solana": {
+    "cluster": "mainnet-beta",
+    "status": "anchor-ready",
+    "registryProgramId": null,
+    "registryPda": null
+  }
+}
